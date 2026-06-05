@@ -1,117 +1,122 @@
 # Skills Guideline
 
-Standard for creating and editing skills in the Design Engineering Playbook.
+## What Is A Skill?
 
-## Definition
+A skill is a reusable AI workflow that teaches an assistant how to perform one specific task.
 
-A skill is a reusable AI workflow that teaches an assistant how to perform one specific task. It turns a repeatable procedure into a loadable instruction set.
+## When To Create A Skill
 
-## When to create a skill
+Create a skill when the same procedure, checklist, review process, or multi-step workflow will be reused.
 
-Create a skill when the same procedure, checklist, review process, or workflow will be reused across multiple sessions or projects.
+## When Not To Create A Skill
 
-## When NOT to create a skill
+Do not create a skill for one-off notes, generic advice, random prompts, private project context, or anything that should be a simple prompt/template instead.
 
-Do not create a skill for:
-- one-off notes or single-use instructions
-- generic AI advice not grounded in design engineering practice
-- random prompts not tied to a specific workflow
-- private project context, client data, or personal information
-- content that belongs in `prompts/` (copy-paste prompt patterns for humans)
+## Design Principles
 
-## Standard single-skill structure
+1. One skill = one repeatable workflow.
+2. Start with 2-3 concrete use cases before writing the skill.
+3. Use progressive disclosure: keep `SKILL.md` focused; move long supporting material to linked files.
+4. Make the skill composable: it should work alongside other skills.
+5. Define expected inputs and outputs.
+6. Write actionable steps, not essays.
+7. Include a quality checklist.
+8. Test triggering, output quality, and edge cases.
+9. Iterate from real use.
+10. Keep everything public-safe.
 
-```
+## Standard Skill Structure
+
+```text
 skills/
-  README.md
-  AGENTS.md
-  skills-guideline.md
-  <skill-name>/
-    SKILL.md              # required: main instructions
-    references/           # optional: background material
-    examples/             # optional: sample outputs
-    scripts/              # optional: executable helpers
+└─ skill-name/
+   ├─ SKILL.md              # required
+   ├─ references/           # optional
+   ├─ examples/             # optional
+   └─ scripts/              # optional
 ```
 
-### Folder and file roles
+Explain:
 
-| Path | Required | Purpose |
-|---|---|---|
-| `SKILL.md` | Yes | Source of truth. Contains frontmatter, purpose, use cases, inputs, outputs, workflow, checklist, and references. |
-| `references/` | No | Longer supporting material that should not always load into context. Load on demand. |
-| `examples/` | No | Sample outputs or good/bad examples that help the agent produce consistent results. |
-| `scripts/` | No | Executable helpers, validators, converters, or checkers. Use only when the workflow benefits from automation. |
+- `SKILL.md`: required source of truth for the skill; contains frontmatter, purpose, use cases, inputs, outputs, workflow, quality checklist, and references.
+- `references/`: optional; longer supporting material loaded only when needed.
+- `examples/`: optional; sample outputs or good/bad examples that help the agent match the expected format.
+- `scripts/`: optional; executable helpers, validators, converters, or checkers.
+- No per-skill `README.md` by default because it duplicates `SKILL.md`.
 
-**No per-skill `README.md` by default.** It duplicates `SKILL.md`. Add one only if the user explicitly asks.
+## Naming Rules
 
-## Recommended SKILL.md structure
+- Skill folder names use kebab-case.
+- No spaces.
+- No underscores.
+- No capitals.
+- `SKILL.md` must be named exactly `SKILL.md`.
+
+## Recommended SKILL.md Template
 
 ```markdown
 ---
 name: skill-name
-description: "Use when [specific trigger or use case]."
+description: Use when [specific trigger/use case].
 ---
 
 # Skill Name
 
 ## Purpose
 
-One paragraph. What does this skill achieve?
-
 ## When To Use
-
-When should an agent load this skill? What signals trigger it?
 
 ## Inputs
 
-What information does the skill need to work? (file paths, URLs, parameters, etc.)
-
 ## Outputs
-
-What does the skill produce? How is the result reported or stored?
 
 ## Workflow
 
-Numbered steps. Each step has a clear action, expected result, and any decision points.
-
 ## Quality Checklist
 
-- [ ] Checkable items that verify the workflow ran correctly
-- [ ] Second check if applicable
-
 ## References
-
-Links to related skills, tools, or external documentation.
 ```
 
-### Frontmatter
+## Frontmatter Rules
 
-| Field | Required | Description |
-|---|---|---|
-| `name` | Yes | Hyphenated kebab-case matching the folder name |
-| `description` | Yes | One line — trigger conditions and summary. Agents use this to decide when to load the skill |
+- `name` should match the folder name.
+- `description` should explain what the skill does and when to use it.
+- Use specific trigger language.
+- Avoid vague descriptions.
+- Keep metadata concise.
+- Do not put private or sensitive content in frontmatter.
 
-## Authoring rules
+## Editing Existing Skills
 
-- one skill = one job. Do not combine unrelated workflows.
-- keep `SKILL.md` concise. Use step-by-step instructions, not essays.
-- use clear trigger language in the `description` frontmatter field.
-- define expected inputs and outputs explicitly.
-- write actionable steps — each step should produce a visible result.
-- include a quality checklist at the end of every skill.
-- move long background material to `references/` — keep the main file lean.
-- include examples only when they demonstrably improve output quality.
-- add scripts only when there is a real executable workflow (validation, conversion, checking).
-- keep everything public-safe. No client names, project specifics, or private data.
+- Preserve the original scope.
+- Do not silently turn one skill into multiple jobs.
+- Update references/examples if the workflow changes.
+- Avoid breaking existing file paths.
+- Ask before deleting or renaming a skill.
 
-## Editing rules
+## Testing Skills
 
-- preserve the skill's original scope. Do not silently broaden a skill to cover multiple jobs.
-- update `references/` and `examples/` if the workflow changes.
-- avoid breaking existing file paths that other skills or tools may rely on.
-- ask before deleting or renaming a skill — someone may depend on it.
+- Test whether the skill triggers for obvious relevant requests.
+- Test paraphrased requests.
+- Test that it does not trigger for unrelated work.
+- Check output structure and quality.
+- Check edge cases.
+- Compare whether the skill reduces repeated prompting.
+
+## Public Safety Rules
+
+- No private workspace context.
+- No client data.
+- No secrets.
+- No personal notes.
+- No proprietary material copied into the skill.
+- Generic examples only unless publication permission exists.
 
 ## References
 
-- [Claude Code Skills](https://code.claude.com/docs/en/skills)
+This guideline is adapted from public Claude Skills guidance and rewritten for the Design Engineering Playbook.
+
+- [Claude Code Skills documentation](https://code.claude.com/docs/en/skills)
+- [The Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf)
+- [Introduction to Agent Skills](https://anthropic.skilljar.com/introduction-to-agent-skills)
 - [Agent Skills open standard](https://agentskills.io)
