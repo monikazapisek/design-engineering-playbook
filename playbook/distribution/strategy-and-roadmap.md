@@ -85,7 +85,7 @@ description: |
 license: MIT
 model: Claude Sonnet 4.5
 compatibility: |
-  Tested with Claude Sonnet 4.5 (Claude Code), GPT-5.5, MiniMax-m3.
+  Tested with Claude Sonnet 4.5 (Claude Code), GPT-5.5, MiniMax-m3, GitHub Copilot.
   Designed for Claude Code, Codex, VS Code, OpenCode.
   No external dependencies, no MCP required.
 metadata:
@@ -98,9 +98,9 @@ metadata:
 **Model + compatibility policy (decided 2026-06-18):**
 
 - **`model:` is always a single string** — `Claude Sonnet 4.5`. awesome-copilot frontmatter schema does not support multi-model lists; do not invent a `model-alternatives` field.
-- **`compatibility:` distinguishes facts from intent** — `Tested with:` lists only models the author has actually run (Claude Sonnet 4.5, GPT-5.5, MiniMax-m3); `Designed for:` lists target platforms that will be validated in subsequent sprints (Claude Code, Codex, VS Code, OpenCode, GitHub Copilot).
+- **`compatibility:` distinguishes facts from intent** — `Tested with:` lists only models the author has actually run (Claude Sonnet 4.5, GPT-5.5, MiniMax-m3, GitHub Copilot as of 2026-06-18 smoke test); `Designed for:` lists target platforms that are planned for validation in subsequent sprints (Claude Code, Codex, VS Code, OpenCode, plus Claude.ai + Messages API for API-first skills like `socratic-dialog`).
 - **Do NOT list unavailable Copilot models** (e.g. `MiniMax-m3` is a valid tested-with claim for the Mavis runtime, but is **not** in the GitHub Copilot model picker — never advertise it as a Copilot model).
-- **`Designed for: GitHub Copilot` is an intent claim, not a tested-with claim** (added 2026-06-18). It signals target audience; it is **not** validation that the asset runs cleanly in Copilot. Move to `Tested with:` only after a positive manual smoke test in the Copilot runtime.
+- **`GitHub Copilot` is a tested-with claim as of 2026-06-18** — Copilot smoke test (`integrations/copilot-smoke-test.md`) passed for all 3 assets after the GitHub Copilot refactor. The `Designed for:` entry for Copilot was removed from frontmatter in all 3 assets; any future re-introduction must be re-validated.
 
 ### 4.3 Submission order (sequenced for momentum)
 
@@ -176,7 +176,7 @@ metadata:
 | `socratic-dialog` import breaks existing references | Low | Medium | Copy-Item, don't Move; verify SKILL.md loads in both Claude Code and Copilot |
 | Brand confusion (Monika vs Design Engineering Playbook) | Medium | Low | Single rule: byline = person, container = project. Document once, apply everywhere |
 | VS Code Agent Plugin API changes mid-Sprint | High | Low | Defer to Sprint 3; not on critical path |
-| `Designed for: GitHub Copilot` claim without refactor validation (added 2026-06-18) | Medium | High | Run refactor + manual smoke test in Copilot runtime **before** opening PR; only move to `Tested with:` after positive test. Until then, treat the Copilot entry as an intent claim, not a capability statement. |
+| ~~`Designed for: GitHub Copilot` claim without refactor validation~~ (added 2026-06-18, **closed 2026-06-18**) | ~~Medium~~ | ~~High~~ | **Closed:** Copilot refactor + smoke test passed 2026-06-18. GitHub Copilot now in `Tested with:` for all 3 assets (commit `0d2953e feat(integrations): add Copilot support and smoke test results`). Evidence: `integrations/copilot-smoke-test.md`. |
 
 ---
 
@@ -189,7 +189,7 @@ metadata:
 | 1 | License for `kano-model-strategist` | **MIT** (matches agent + socratic-dialog after relicense) | 2026-06-18 |
 | 2 | `socratic-dialog` license | **MIT** (relicensed from CC-BY-4.0 by sole author; prior recipients retain CC-BY-4.0 for their copies) | 2026-06-18 |
 | 3 | Model in frontmatter | **Claude Sonnet 4.5** (single string, awesome-copilot schema) | 2026-06-18 |
-| 4 | `compatibility:` claim scope | **Tested with** Claude Sonnet 4.5 (Claude Code), GPT-5.5, MiniMax-m3. **Designed for** Claude Code, Codex, VS Code, OpenCode, **GitHub Copilot** (intent claim, pending refactor + smoke test). | 2026-06-18 |
+| 4 | `compatibility:` claim scope | **Tested with** Claude Sonnet 4.5 (Claude Code), GPT-5.5, MiniMax-m3, **GitHub Copilot** (smoke test passed 2026-06-18). **Designed for** Claude Code, Codex, VS Code, OpenCode; `socratic-dialog` additionally Designed for **Claude.ai** + **Messages API** (API-first skill, no runtime required). | 2026-06-18 |
 
 **Remaining Sprint 1 Day 2 questions (defer, do not block Day 1):**
 
