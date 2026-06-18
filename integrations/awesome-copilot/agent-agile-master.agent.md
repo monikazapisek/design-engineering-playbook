@@ -12,7 +12,7 @@ metadata:
   author: Monika Zapisek
   project: Design Engineering Playbook
   version: 1.3
-  source: https://github.com/monikazapisekstudio/meta-space/tree/master/projects/design-engineering-playbook/agents/agent-agile-master
+  source: https://github.com/monikazapisekstudio/design-engineering-playbook/tree/main/agents/agent-agile-master
   references:
     - ATTRIBUTION.md
     - EVIDENCE.md
