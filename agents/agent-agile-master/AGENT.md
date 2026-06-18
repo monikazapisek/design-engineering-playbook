@@ -247,11 +247,7 @@ Hard rule: **max 1 skill + 2 knowledge summaries per session**. Token discipline
 
 ---
 
-## Wersjonowanie i SoT
+## Wersjonowanie
 
-**Canonical location:** `C:\Users\Monika\_meta-space\.agents\agents\agent-agile-master/`
-
-**Junctions:** (do dodania po akceptacji)
-- `design-handoff-lab/.agents/agents/agent-agile-master/` → junction
-
-Reguła: edytuj canonical. Junction odzwierciedla automatycznie.
+Canonical source: to repozytorium (`agents/agent-agile-master/`).
+Wersja w prywatnym workspace może być bardziej aktualna — public mirror jest synchronizowany ręcznie przy każdym release.

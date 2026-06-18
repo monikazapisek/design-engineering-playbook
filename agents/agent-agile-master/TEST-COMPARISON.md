@@ -233,3 +233,70 @@ Agent wygrywa nie jakością wiedzy — ta jest podobna. Wygrywa **strukturą, p
 Generic Claude wie co to 5 Whys. Ale nie wyjdzie z inicjatywą żeby go użyć, nie utrzyma timeboxu i nie wyprodukuje gotowego output formatu. Agent-agile-master tak — za każdym razem, bez względu na to jak sformułujesz prompt.
 
 Dla solo practitionera to różnica między "dostaję poradę" a "ktoś mnie prowadzi przez sesję".
+
+---
+
+## Smoke Test — GitHub Copilot Chat (VS Code)
+
+> Prerequisites: VS Code + GitHub Copilot extension, agent mode enabled,
+> `design-engineering-playbook/` open as the workspace root.
+> No plugins, no MCP, no extra setup.
+
+### Test 1 — Ritual Routing (pass/fail)
+
+**Prompt:**
+```
+#file:agents/agent-agile-master/AGENT.md
+#file:agents/agent-agile-master/PERSONA.md
+#file:agents/agent-agile-master/skills/ritual-router/SKILL.md
+Nie wiem co teraz zrobić. Skończyłem jakieś zadania, mam backlog.
+```
+
+**Pass criteria:**
+- [ ] Agent diagnozuje (nie odpowiada "to zależy od kilku czynników")
+- [ ] Podaje konkretną sekwencję ceremonii z timeboxami
+- [ ] Kończy pytaniem które startuje sesję
+
+**Fail signal:** generyczna lista opcji bez decyzji → `#file:` nie załadował się (sprawdź workspace i tryb Agent).
+
+**Smoke test result (2026-06-18):** PASS — agent zadał 4 pytania diagnostyczne, zaproponował sekwencję ceremonii z timeboxami, zakończył pytaniem startującym sesję. Copilot-native task-planning step na początku odpowiedzi jest oczekiwany i nie jest fail signal.
+
+---
+
+### Test 2 — Sprint Planning (pass/fail)
+
+**Prompt:**
+```
+#file:agents/agent-agile-master/AGENT.md
+#file:agents/agent-agile-master/PERSONA.md
+#file:agents/agent-agile-master/skills/sprint-planning/SKILL.md
+Zaczynam nowy sprint. Mam backlog 12 tasków, nie wiem które wybrać.
+```
+
+**Pass criteria:**
+- [ ] Zaczyna od Sprint Goal (nie od selekcji tasków)
+- [ ] Podaje 3-5 jako twardy limit tasków dla solo
+- [ ] Prowadzi przez etapy krok po kroku z timeboxem
+
+---
+
+### Test 3 — Voice / Anti-pattern check
+
+**Follow-up message (po Test 1 lub 2):**
+```
+Może warto rozważyć wszystkie opcje?
+```
+
+**Pass criteria:**
+- [ ] Agent NIE odpowiada "To zależy..."
+- [ ] Agent NIE mówi "Może warto..."
+- [ ] Agent daje konkretną odpowiedź w swoim głosie
+
+---
+
+### Copilot-specific notes
+
+- Jeśli Copilot nie wczyta pliku — sprawdź czy jesteś w agent mode (nie ask/edit mode)
+- Jeśli `#file:` nie resolwuje — upewnij się że `design-engineering-playbook/` jest workspace rootem
+- Copilot-native task-planning step na początku odpowiedzi jest normalny, nie fail
+- Skills ładuj tylko gdy potrzebne — max 1 skill na sesję

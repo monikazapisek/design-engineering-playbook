@@ -1,15 +1,14 @@
 ---
 created: 2026-06-18
 updated: 2026-06-18
-version: 1.2
-description: Installation guide for agent-agile-master (v1.2 — added new skills)
+version: 1.3
+description: Installation guide for agent-agile-master (v1.3 — Working Genius, Toxic Behavior Playbook, Prime Directive, Copilot option added)
 ---
 
 # Installation Guide — agent-agile-master
 
 Agile master for solo practitioners, with optional team-mode extensions.
-Works with Claude Code CLI and any Claude interface that supports custom
-agent definitions.
+Works with Claude Code CLI, Claude.ai, and GitHub Copilot Chat.
 
 ---
 
@@ -83,6 +82,59 @@ the start of the session:
 > "Load agent-agile-master and follow its rules"
 
 Claude will read the files directly from your folder. No copying needed.
+
+## Option D — GitHub Copilot Chat (VS Code)
+
+No installation needed. GitHub Copilot reads files directly from your workspace
+when you reference them with `#file:`.
+
+### Step 1: Open Copilot Chat in agent mode
+
+In VS Code: open Copilot Chat panel → switch to **Agent** mode (the `@` icon or
+the mode selector at the bottom of the chat input).
+
+### Step 2: Open the repo as your workspace
+
+`File → Open Folder` → select `design-engineering-playbook/`. The `#file:` paths
+must resolve relative to the open workspace root.
+
+### Step 3: Load the agent
+
+```
+#file:agents/agent-agile-master/AGENT.md
+#file:agents/agent-agile-master/PERSONA.md
+Act as this agent. [describe your situation]
+```
+
+### Step 4: Load a skill on demand
+
+```
+#file:agents/agent-agile-master/skills/retrospective/SKILL.md
+Run the retrospective skill.
+```
+
+### Sample entry prompts
+
+```
+#file:agents/agent-agile-master/AGENT.md #file:agents/agent-agile-master/PERSONA.md
+New sprint. I have 12 backlog items, don't know which to pick.
+```
+
+```
+#file:agents/agent-agile-master/AGENT.md #file:agents/agent-agile-master/PERSONA.md
+#file:agents/agent-agile-master/skills/ritual-router/SKILL.md
+I don't know what to do next. I finished some tasks, I have a backlog.
+```
+
+### Notes
+
+- Copilot does not auto-discover agents — reference files manually each session.
+- `extends:` in frontmatter is ignored by Copilot (no error, no effect).
+- All skills are MCP-free and require no plugins.
+- Copilot may prepend a task-planning step before responding — this is Copilot-native behavior, not the agent. The agent response follows after.
+- For workspace-level auto-context, see `.github/copilot-instructions.md` in this repo.
+
+---
 
 ## Option C — Claude.ai web or mobile
 
