@@ -14,6 +14,8 @@ npx skills add monikazapisekstudio/design-engineering-playbook
 - [Agent Agile Master](https://github.com/github/awesome-copilot/pull/2051) (PR pending)
 - [Kano Model Strategist + Socratic Dialog](https://github.com/github/awesome-copilot/pull/2053) (PR pending)
 
+**Cursor** — copy the `.cursor/skills/` folder from this repo into your project root. Skills activate automatically when Cursor detects a relevant task.
+
 **Manual install** — copy any `SKILL.md` or `AGENT.md` file into your project and reference it in your agent config.
 
 ---
