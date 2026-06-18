@@ -93,7 +93,7 @@ in the source repository.
 
 - Source repo: [monikazapisekstudio/design-engineering-playbook → agents/agent-agile-master](https://github.com/monikazapisekstudio/design-engineering-playbook/tree/main/agents/agent-agile-master)
 - License: MIT
-- Author: Monika Zapisek
+- Author: [Monika Zapisek](https://monikazapisek.com)
 - Project: Design Engineering Playbook
 
 ---
