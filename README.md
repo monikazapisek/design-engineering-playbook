@@ -1,6 +1,6 @@
 # Design Engineering Playbook
 
-A practical operating system for senior UX/UI and Product Designers who want to use advanced AI across the full product lifecycle: strategy, design systems, prototyping, project management, and design-to-code workflows.
+AI-assisted workflow artefacts for product designers working in agile and lean environments. Agents, skills, and design engineering tools built for AI-native workflows across the full product lifecycle.
 
 ## Vision
 
