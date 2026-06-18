@@ -11,7 +11,7 @@ description: Skill evaluation and evidence base for agent-agile-master (v1.3 —
 
 **Date:** 2026-06-18
 **Evaluator:** Monika Zapisek (canonical agent owner)
-**Status:** Active / Triage — used in production for solo agile rituals, with optional team-mode extensions for 2-5 person teams
+**Status:** Active / Triage — used in production by product designers, product owners, and scrum masters in cross-functional teams
 
 ## Sources
 
@@ -27,7 +27,7 @@ description: Skill evaluation and evidence base for agent-agile-master (v1.3 —
 
 ## What This Agent Does
 
-The agent orchestrates agile ceremonies for solo practitioners, with optional team-mode extensions. It:
+The agent orchestrates agile ceremonies for product designers, product owners, and scrum masters working in cross-functional teams. Two modes: prepare (solo thinking before a session) and facilitate (live team session). It:
 1. Routes from problem signal → correct ritual across 7 skills and ~25 rituals
 2. Loads only relevant skill + knowledge (token-budgeted)
 3. Facilitates step-by-step with concrete techniques and timeboxes
@@ -62,11 +62,11 @@ The agent orchestrates agile ceremonies for solo practitioners, with optional te
 | Toxic Behavior archetypes (Monopolizer/Ghost/Critic) | **Moderate** — synthesized from Lencioni + facilitation practice, NOT a published framework | `ATTRIBUTION.md` |
 | Managing difficult emotions in retro | Strong — Derby/Larsen + broader facilitation literature | `ATTRIBUTION.md` |
 
-### Adaptations for Solo Practice
+### Adaptations per Mode
 
-Standard agile and team-coaching ceremonies assume a team. This agent adapts:
+Standard agile ceremonies assume a full team presence. This agent adapts per mode (prepare vs facilitate):
 
-| Ceremony | Team default | Solo adaptation |
+| Ceremony | Team default | Prepare mode (solo) |
 |---|---|---|
 | Sprint Planning | 4h for multi-team | 30-45 min self-facilitated |
 | Retrospective | 1.5h with facilitator | 20-30 min self-reflection |
