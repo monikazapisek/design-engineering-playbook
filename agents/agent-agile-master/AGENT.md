@@ -1,10 +1,20 @@
 ---
+name: agent-agile-master
 created: 2026-06-18
 updated: 2026-06-18
 version: 1.3
 status: active
 description: Agile master orchestrator — knows which ritual to run when, routes to specialized skills, facilitates using best practices from knowledge base. Solo practitioner context (1 person team) with optional team-mode extensions. v1.3 adds Working Genius, Toxic Behavior Playbook, Personal User Manuals, Prime Directive ceremony, and emotional safety in retros.
 extends: ../../../AGENTS.md
+license: MIT
+model: Claude Sonnet 4.5
+compatibility: |
+  Tested with Claude Sonnet 4.5 (Claude Code), GPT-5.5, MiniMax-m3, GitHub Copilot.
+  Designed for Claude Code, Codex, VS Code, OpenCode.
+  No external dependencies, no MCP required.
+metadata:
+  author: Monika Zapisek
+  project: Design Engineering Playbook
 ---
 
 # agent-agile-master

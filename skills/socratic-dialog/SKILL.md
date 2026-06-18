@@ -3,13 +3,17 @@ name: socratic-dialog
 description: |
   Enforces reasoning rigor, anti-fluency, and anti-sycophancy guards on the agent. Operates as a Cognitive Immune System — three lines of defense (Definition, Elenchus, Faithfulness) protect the reasoning chain from unsupported claims, with an autoimmunology checkpoint preventing the agent from attacking its own verified conclusions. Switches the interaction contract from "vending machine" to "seminar" (Question → Justified Reasoning). Use in Context Engineering for Story Map verification, strategic planning, and requirements gathering. Triggers: high-stakes reasoning, imprecise KPIs ("success", "quality"), low model confidence, detected session contradiction, or evidence the model is drifting toward agreement without grounds.
 license: MIT
+model: Claude Sonnet 4.5
 compatibility: |
-  Designed for Claude.ai, Claude Code, and the Messages API. No external dependencies, no MCP required, no network access needed at runtime.
+  Tested with Claude Sonnet 4.5 (Claude Code), GPT-5.5, MiniMax-m3, GitHub Copilot.
+  Designed for Claude Code, Codex, VS Code, OpenCode, Claude.ai, Messages API.
+  No external dependencies, no MCP required, no network access needed at runtime.
 metadata:
   author: Monika Zapisek
+  project: Design Engineering Playbook
   version: 2.3
   created: 2026-03-06
-  updated: 2026-06-05
+  updated: 2026-06-18
   status: accepted
   method: references/methodology-socratic-dialog.md
 ---

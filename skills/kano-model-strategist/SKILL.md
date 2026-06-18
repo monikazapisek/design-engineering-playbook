@@ -8,6 +8,15 @@ description: |
   prioritize a roadmap, audit a spec for scope creep, or push back on a low-value feature. Do NOT
   use for general project management, Gantt charts, or non-feature design decisions (visual polish,
   copy editing) — those use a different lens.
+license: MIT
+model: Claude Sonnet 4.5
+compatibility: |
+  Tested with Claude Sonnet 4.5 (Claude Code), GPT-5.5, MiniMax-m3, GitHub Copilot.
+  Designed for Claude Code, Codex, VS Code, OpenCode.
+  No external dependencies, no MCP required.
+metadata:
+  author: Monika Zapisek
+  project: Design Engineering Playbook
 ---
 
 # Kano Model Strategist & Feature Pruner
