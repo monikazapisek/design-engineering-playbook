@@ -70,7 +70,7 @@ For each channel, classify what the user (you + your audience) gets:
 - **Rule of thumb:** byline = person, container = project
 
 **Tagline (one sentence):**
-> "AI-native design engineering — agents and skills for solo practitioners who ship."
+> "AI-assisted workflow artefacts for product designers working in agile and lean environments."
 
 ### 4.2 Format unification
 
