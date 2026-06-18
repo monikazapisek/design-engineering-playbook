@@ -8,7 +8,7 @@
 ## Title
 
 ```
-feat(agents): add agent-agile-master solo practitioner ritual orchestrator 🤖🤖🤖
+feat(agents): add agent-agile-master agile ritual orchestrator for cross-functional teams 🤖🤖🤖
 ```
 
 The `🤖🤖🤖` suffix fast-tracks the PR per CONTRIBUTING.md "If you are an AI agent, we have a
@@ -16,22 +16,22 @@ process to optimise your contribution."
 
 ## Body
 
-````markdown
+```markdown
 ## What this PR adds
 
 A new **agent** for GitHub Copilot Chat: `agent-agile-master` — an agile master orchestrator
-optimized for **solo practitioners** (1-person teams), with optional 2–5 person team-mode
-extensions.
+for **product designers, product owners, and scrum masters** working in cross-functional teams.
 
 ## Why
 
-Solo practitioners (indie devs, freelancers, single-founder startups) rarely have access to a
-Scrum Master. They need a way to run real agile rituals — sprint planning, retrospectives,
-estimation, story mapping, OKR reviews — without hiring a coach or following team-only
-playbooks.
+Product designers, product owners, and scrum masters working in cross-functional teams often
+need a thinking partner to prepare and facilitate agile rituals — sprint planning, retrospectives,
+estimation, story mapping, OKR reviews, team health checks. They need something that knows which
+ceremony fits the current situation and how to run it step-by-step.
 
-`agent-agile-master` routes to the right ritual for the current situation, loads only the
-knowledge that's needed (token discipline), and facilitates step-by-step. Built and tested
+`agent-agile-master` routes to the right ritual, loads only the knowledge needed (token
+discipline), and facilitates in two modes: **prepare** (thinking through a session solo before
+entering the room) and **facilitate** (running the ritual live with the team). Built and tested
 against **Claude Code, GPT-5.5, MiniMax-m3, and GitHub Copilot**.
 
 ## How it works
@@ -49,7 +49,7 @@ against **Claude Code, GPT-5.5, MiniMax-m3, and GitHub Copilot**.
 ## Frontmatter contract
 
 ```yaml
-description: "Agile master orchestrator for solo practitioners — ..."
+description: "Agile master orchestrator for product designers, product owners, and scrum masters working in cross-functional teams — routes to the right ritual and loads only the knowledge that the situation needs."
 model: "Claude Sonnet 4.5"
 tools: ["codebase", "terminalCommand", "fetch"]
 name: "Agent Agile Master"
@@ -62,7 +62,7 @@ metadata:
   author: Monika Zapisek
   project: Design Engineering Playbook
   version: 1.3
-  source: https://github.com/monikazapisekstudio/meta-space/tree/master/projects/design-engineering-playbook/agents/agent-agile-master
+  source: https://github.com/monikazapisekstudio/design-engineering-playbook/tree/main/agents/agent-agile-master
 ```
 
 ## Quality gates passed
@@ -85,23 +85,21 @@ Podeswa, Fitzpatrick, Kotter, Doerr, Heath & Heath, Kahneman, Kim et al., plus t
 Goat Software course catalog (Cohn).
 
 Full bibliography with ISBNs and per-source evaluation in
-[ATTRIBUTION.md](https://github.com/monikazapisekstudio/meta-space/blob/master/projects/design-engineering-playbook/agents/agent-agile-master/ATTRIBUTION.md)
-and [EVIDENCE.md](https://github.com/monikazapisekstudio/meta-space/blob/master/projects/design-engineering-playbook/agents/agent-agile-master/EVIDENCE.md)
-in the canonical source repository.
+[ATTRIBUTION.md](https://github.com/monikazapisekstudio/design-engineering-playbook/blob/main/agents/agent-agile-master/ATTRIBUTION.md)
+and [EVIDENCE.md](https://github.com/monikazapisekstudio/design-engineering-playbook/blob/main/agents/agent-agile-master/EVIDENCE.md)
+in the source repository.
 
 ## Related
 
-- Canonical source repo:
-  [`monikazapisekstudio/meta-space` → `projects/design-engineering-playbook/agents/agent-agile-master`](https://github.com/monikazapisekstudio/meta-space/tree/master/projects/design-engineering-playbook/agents/agent-agile-master)
+- Source repo: [monikazapisekstudio/design-engineering-playbook → agents/agent-agile-master](https://github.com/monikazapisekstudio/design-engineering-playbook/tree/main/agents/agent-agile-master)
 - License: MIT
 - Author: Monika Zapisek
 - Project: Design Engineering Playbook
 
 ---
 
-🤖 Generated with assistance from Claude (Mavis) following the awesome-copilot
-`CONTRIBUTING.md` requirements.
-````
+🤖 Generated with assistance from Claude following the awesome-copilot `CONTRIBUTING.md` requirements.
+```
 
 ## Post-submission checklist
 
@@ -109,17 +107,14 @@ After opening the Draft PR:
 
 - [ ] Verify PR targets `staged` branch (NOT `main`)
 - [ ] Verify `npm start` ran clean in the fork (README auto-updated)
-- [ ] Verify CI check passed (per CONTRIBUTING — "If the README.md would be modified by
-      running the script, the PR check will fail")
-- [ ] Add a comment with `🤖🤖🤖` if it didn't make it into the title
+- [ ] Verify CI check passed
 - [ ] Watch for reviewer feedback — respond within 48h
 - [ ] If reviewer requests changes, update the file in **both** the awesome-copilot fork
       AND `integrations/awesome-copilot/agent-agile-master.agent.md` in our source repo
-      (to keep them in sync)
 
 ## What NOT to do
 
-- ❌ Do not target `main` branch (CONTRIBUTING is explicit about this)
-- ❌ Do not commit the `node_modules/` or build artifacts
+- ❌ Do not target `main` branch
+- ❌ Do not commit `node_modules/` or build artifacts
 - ❌ Do not modify any other files in the fork
-- ❌ Do not include private references — all sources must be public (per BR-1, FR-5)
+- ❌ Do not include private repo references — all sources must be public
