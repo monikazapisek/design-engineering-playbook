@@ -156,16 +156,15 @@ metadata:
 
 ### Sprint 2 — Full Launch (2 weeks, **the path if Sprint 1 lands well**)
 **Week 1:**
-- Day 1–2: Merge Sprint 1 PR if not yet (or address review feedback)
-- Day 3:   Submit `kano-model-strategist` as separate PR
-- Day 4:   Submit `socratic-dialog` as separate PR (license MIT; PR body links to the relicense note in `playbook/distribution/strategy-and-roadmap.md` §1)
-- Day 5:   Add cross-channel links in awesome-copilot PRs (each → canonical repo)
+- [x] Merge Sprint 1 PR / address review feedback (awesome-copilot PR #2051, #2053 open — 2026-06-18)
+- [x] Submit `kano-model-strategist` + `socratic-dialog` as PR #2053 (2026-06-18)
+- [x] Cursor — `.cursor/skills/` + `.cursor/agents/` added to repo (2026-06-18)
+- [ ] **P0 NEXT: artykuł na Medium** — "How I built an agile master agent for product designers" (SoT, potem X.com thread + site thumbnail)
 
 **Week 2:**
-- Day 1–2: Cursor submission — package 3 assets as `.cursorrules` + project rules
-- Day 3:   Personal site post draft
-- Day 4:   Publish site post + cross-link to all 3 channels
-- Day 5:   Measure: GitHub stars, awesome-copilot install count, Cursor rule installs, site traffic
+- [ ] X.com thread po publikacji Medium artykułu
+- [ ] Site — thumbnail + link do Medium (nie pełny artykuł)
+- [ ] Measure: GitHub stars, awesome-copilot install count, Medium reads, X.com engagement
 
 ### Sprint 3 — Stabilization (backlog)
 - VS Code Agent Plugin submission (when plugin.json spec stabilizes)
