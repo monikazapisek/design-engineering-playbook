@@ -26,7 +26,7 @@ Codex loads skills from your project's skill manifest file at the project root. 
 
 ```markdown
 ## Skills
-This project uses the Socratic Dialog skill.
+This project uses the Socratic Dialogue skill.
 Path: ./skills/socratic-dialogue/SKILL.md
 ```
 

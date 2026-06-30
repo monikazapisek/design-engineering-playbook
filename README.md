@@ -12,7 +12,7 @@ npx skills add monikazapisekstudio/design-engineering-playbook
 
 **GitHub Copilot** — available via [awesome-copilot](https://github.com/github/awesome-copilot):
 - [Agent Agile Master](https://github.com/github/awesome-copilot/pull/2051) (PR pending)
-- [Kano Model Strategist + Socratic Dialog](https://github.com/github/awesome-copilot/pull/2053) (PR pending)
+- [Kano Model Strategist + Socratic Dialogue](https://github.com/github/awesome-copilot/pull/2053) (PR pending)
 
 **Cursor** — copy the `.cursor/` folder from this repo into your project root:
 - `.cursor/skills/` — skills (kano-model-strategist, socratic-dialogue, legible-agent-output)

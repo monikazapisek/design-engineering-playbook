@@ -1,4 +1,4 @@
-# Socratic Dialog
+# Socratic Dialogue
 
 > **Reasoning discipline for AI agents.** Turns the model from an answer machine into a seminar partner: anchored definitions, adversarial cross-examination, faithfulness checks, and an autoimmune checkpoint against sycophancy.
 
@@ -30,7 +30,7 @@
 
 ## What it does
 
-`Socratic Dialog` is a reasoning skill that replaces the default "vending machine" interaction with a structured **seminary** model. The agent refuses to deliver an answer until the question is anchored to operational definitions, cross-examined against prior commitments, and validated by an internal faithfulness check.
+`Socratic Dialogue` is a reasoning skill that replaces the default "vending machine" interaction with a structured **seminar** model. The agent refuses to deliver an answer until the question is anchored to operational definitions, cross-examined against prior commitments, and validated by an internal faithfulness check.
 
 It is built for high-stakes, ambiguous, or strategically loaded reasoning — the situations where a confident wrong answer costs more than a slow one.
 

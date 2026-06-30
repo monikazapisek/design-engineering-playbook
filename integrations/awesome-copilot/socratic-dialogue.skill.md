@@ -29,7 +29,7 @@ metadata:
   source: https://github.com/monikazapisekstudio/design-engineering-playbook/tree/main/skills/socratic-dialogue
 ---
 
-# Socratic Dialog (Architectural Logic)
+# Socratic Dialogue (Architectural Logic)
 
 ## Use this skill when
 
@@ -45,7 +45,7 @@ metadata:
 ## When NOT to use
 
 - **Simple Lookups:** Straightforward factual questions ("What is the capital of France?")
-- **Tight Budget:** Situations where speed is more important than precision (Socratic dialog
+- **Tight Budget:** Situations where speed is more important than precision (Socratic dialogue
   increases latency)
 - **Passive Users:** When the user cannot or does not want to engage in iterative clarification
 - **Crisp Tasks:** Fully formalized and computational tasks
@@ -104,7 +104,7 @@ architecture proposal will be verified against this."
 
 ## Anti-Bias & Anti-Sycophancy Hardening
 
-Socratic dialog is a high-control regime for reasoning. The risk is compromise by two failure
+Socratic dialogue is a high-control regime for reasoning. The risk is compromise by two failure
 modes: model bias (statistical preference for certain answers) and sycophancy (tendency to agree
 with the user to gain approval). Both are amplified in long sessions.
 

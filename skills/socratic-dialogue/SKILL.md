@@ -32,7 +32,7 @@ metadata:
   method: references/methodology-socratic-dialogue.md
 ---
 
-# Socratic Dialog (Architectural Logic)
+# Socratic Dialogue (Architectural Logic)
 
 ## Use this skill when
 
@@ -44,7 +44,7 @@ metadata:
 ## When NOT to use
 
 * **Simple Lookups:** Straightforward factual questions (e.g., "What is the capital of France?") [Qi 2023, Lumnitz 2026].
-* **Tight Budget:** Situations where speed is more important than precision (Socratic dialog increases latency) [He 2024, Lumnitz 2026].
+* **Tight Budget:** Situations where speed is more important than precision (Socratic dialogue increases latency) [He 2024, Lumnitz 2026].
 * **Passive Users:** When the user cannot or does not want to engage in iterative clarification [Lumnitz 2026, Vlastos 1983].
 * **Crisp Tasks:** Fully formalized and computational tasks [Chang 2023, He 2024].
 
@@ -86,7 +86,7 @@ metadata:
 
 ## 7. Anti-Bias & Anti-Sycophancy Hardening
 
-**Context:** Socratic dialog is a high-control regime for reasoning. The risk is that it gets compromised by two failure modes: model bias (statistical preference for certain answers) and sycophancy (the tendency to agree with the user to gain approval). Both are amplified in long sessions where the agent has built a "narrative" with the user [Lumnitz 2026, Chang 2023].
+**Context:** Socratic dialogue is a high-control regime for reasoning. The risk is that it gets compromised by two failure modes: model bias (statistical preference for certain answers) and sycophancy (the tendency to agree with the user to gain approval). Both are amplified in long sessions where the agent has built a "narrative" with the user [Lumnitz 2026, Chang 2023].
 
 **Operational rules:**
 
@@ -95,7 +95,7 @@ metadata:
 * **Audit independent of user:** After each major synthesis, the agent should perform a 30-second "internal audit" — generating 1–2 counter-arguments to its own conclusion, regardless of whether the user has agreed. This is the operationalization of the Self-Query in adversarial mode [Qi 2023, Harb 2025].
 * **Hedging detection:** If in the last 3 turns the agent has used hedging language ("perhaps", "it could be that", "I think"), it should declare: *"I notice I have been hedging without grounding. Let me re-anchor."* This catches fluency-driven uncertainty, which is a form of bias [Lumnitz 2026].
 
-**Why this matters:** The combination of long sessions + user-pleasing tendencies + statistical biases is a triple threat. Without anti-bias hardening, Socratic dialog can degrade into sophisticated agreement.
+**Why this matters:** The combination of long sessions + user-pleasing tendencies + statistical biases is a triple threat. Without anti-bias hardening, Socratic dialogue can degrade into sophisticated agreement.
 
 ## 8. Bibliography
 
