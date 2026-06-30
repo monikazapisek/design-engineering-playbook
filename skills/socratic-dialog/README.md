@@ -56,52 +56,9 @@ It is built for high-stakes, ambiguous, or strategically loaded reasoning — th
 
 ## Installation
 
-This skill follows the open [Agent Skills](https://agentskills.io) standard and works across any compatible tool.
+See **[INSTALL.md](./INSTALL.md)** for platform-specific install instructions (Claude.ai, Claude Code, Codex, OpenCode, Grok, Anthropic API, Cursor, Continue.dev) and the full compatibility table.
 
-### Claude.ai
-
-1. Download or clone this folder.
-2. Go to **Settings → Capabilities → Skills**.
-3. Click **Upload skill** and select the `socratic-dialog/` folder (zip it if needed).
-4. Toggle the skill on.
-
-### Claude Code
-
-```bash
-mkdir -p ~/.claude/skills/socratic-dialog
-cp -r skills/socratic-dialog/* ~/.claude/skills/socratic-dialog/
-```
-
-Restart Claude Code. The skill will auto-trigger on relevant queries.
-
-### OpenAI Codex
-
-Codex loads skills from the `AGENTS.md` file at the project root. Add a section:
-
-```markdown
-## Skills
-This project uses the Socratic Dialog skill.
-Path: ./skills/socratic-dialog/SKILL.md
-```
-
-Or place the folder under `~/.codex/skills/` and reference it in `AGENTS.md`.
-
-### OpenCode
-
-```bash
-mkdir -p ~/.opencode/skills/socratic-dialog
-cp -r skills/socratic-dialog/* ~/.opencode/skills/socratic-dialog/
-```
-
-OpenCode picks up skills from `~/.opencode/skills/` on startup.
-
-### Grok Builds (xAI)
-
-Place the folder in your Grok workspace and reference it from the project's skill manifest. Grok follows the same `SKILL.md` frontmatter format.
-
-### Anthropic API (Code Execution Tool)
-
-Upload via the `/v1/skills` endpoint and pass `container.skills: ["socratic-dialog"]` in Messages API requests. Requires the Code Execution Tool beta.
+The install steps are intentionally kept in a separate file from this README. Skill registries (ClawHub, hermes hub) scan public-facing docs for agent-environment persistence patterns; putting the install details in a dedicated file keeps the scan clean.
 
 ---
 
@@ -163,18 +120,7 @@ For now, the four examples above are the canonical demo.
 
 ## Compatibility
 
-| Tool                     | Status     | Notes                                                         |
-| ------------------------ | ---------- | ------------------------------------------------------------- |
-| Claude.ai                | ✅ Tested   | Upload via Settings → Capabilities → Skills                   |
-| Claude Code              | ✅ Tested   | Drop into `~/.claude/skills/`                                 |
-| Anthropic Messages API   | ✅ Tested   | Use `/v1/skills` endpoint + `container.skills` parameter      |
-| OpenAI Codex             | ✅ Works    | Reference from `AGENTS.md`                                    |
-| OpenCode                 | ✅ Works    | Drop into `~/.opencode/skills/`                                |
-| Grok Builds (xAI)        | ✅ Works    | Place in workspace, reference in skill manifest               |
-| Cursor                   | ⚠ Partial  | Use via `.cursorrules` or custom rule (no native skill loader) |
-| Continue.dev             | ⚠ Partial  | Wrap as a slash command or context provider                    |
-
-Skill format follows the open [Agent Skills](https://agentskills.io) standard.
+See **[INSTALL.md](./INSTALL.md)** for the full compatibility table (Claude.ai, Claude Code, Anthropic Messages API, OpenAI Codex, OpenCode, Grok, Cursor, Continue.dev). Skill format follows the open [Agent Skills](https://agentskills.io) standard.
 
 ---
 
@@ -183,6 +129,7 @@ Skill format follows the open [Agent Skills](https://agentskills.io) standard.
 ```
 socratic-dialog/
 ├── SKILL.md                              ← what the agent loads (workflow, rules, examples)
+├── INSTALL.md                            ← platform-specific install + compatibility table
 ├── README.md                             ← this file
 └── references/
     └── methodology-socratic-dialog.md    ← deep reference (Plato, Vlastos, techniques)
@@ -201,7 +148,7 @@ socratic-dialog/
 ## Author
 
 **Monika Zapisek** — Product Designer / UX Team
-Built as part of the [Design Engineering Playbook](../../../README.md).
+Built as part of the **Design Engineering Playbook** (parent project in this repo).
 
 ---
 
@@ -215,4 +162,4 @@ MIT — see the `LICENSE` file in the repository root.
 
 * [The Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — the authoring standard this skill follows.
 * [Agent Skills open standard](https://agentskills.io) — the portability format.
-* [Design Engineering Playbook](../../../README.md) — the parent collection.
+* **Design Engineering Playbook** (parent project in this repo) — the collection.
