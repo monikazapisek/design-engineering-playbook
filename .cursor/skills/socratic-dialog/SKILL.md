@@ -95,4 +95,4 @@ metadata:
 
 ## License
 
-MIT — see [`LICENSE`](../../../LICENSE) in the repository root.
+MIT — see the `LICENSE` file in the repository root.

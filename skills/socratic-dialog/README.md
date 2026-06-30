@@ -2,7 +2,7 @@
 
 > **Reasoning discipline for AI agents.** Turns the model from an answer machine into a seminar partner: anchored definitions, adversarial cross-examination, faithfulness checks, and an autoimmune checkpoint against sycophancy.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../../LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
 [![Version](https://img.shields.io/badge/version-2.3-green)](./SKILL.md)
 [![Status](https://img.shields.io/badge/status-stable-brightgreen)](#)
 [![Skill Type](https://img.shields.io/badge/type-reasoning-purple)](#)
@@ -207,7 +207,7 @@ Built as part of the [Design Engineering Playbook](../../../README.md).
 
 ## License
 
-MIT — see [`LICENSE`](../../../LICENSE) in the repository root.
+MIT — see the `LICENSE` file in the repository root.
 
 ---
 

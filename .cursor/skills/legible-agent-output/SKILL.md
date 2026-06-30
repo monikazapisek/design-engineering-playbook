@@ -185,4 +185,4 @@ Six-category taxonomy of failure modes: see `references/jargon-categories.md`.
 
 ## License
 
-MIT — see [`LICENSE`](../../../LICENSE) in the repository root. Author: **[Monika Zapisek](https://monikazapisek.com)**. Project: **Design Engineering Playbook**.
+MIT — see the `LICENSE` file in the repository root. Author: **[Monika Zapisek](https://monikazapisek.com)**. Project: **Design Engineering Playbook**.
