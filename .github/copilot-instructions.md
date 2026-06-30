@@ -75,6 +75,20 @@ Sprint just ended. Run a solo retrospective with me.
 
 ## Available skills (standalone)
 
+### legible-agent-output
+
+Force every user-facing string from an AI agent to be readable by a non-technical human. Replaces opaque codes (A127, ENOENT), framework jargon, and raw error strings with plain-language titles, status messages, and error descriptions.
+
+```
+#file:skills/legible-agent-output/SKILL.md
+Rewrite this agent output for a non-technical product manager: [raw output]
+```
+
+Reference files (load when the skill asks for them):
+- `#file:skills/legible-agent-output/references/articles-sources.md`
+- `#file:skills/legible-agent-output/references/jargon-categories.md`
+- `#file:skills/legible-agent-output/examples/before-after.md`
+
 ### kano-model-strategist
 
 Classify features into Kano categories. Cut waste, build MDP over MVP.
