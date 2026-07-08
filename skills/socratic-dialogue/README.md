@@ -58,7 +58,11 @@ It is built for high-stakes, ambiguous, or strategically loaded reasoning — th
 
 See **[INSTALL.md](./INSTALL.md)** for platform-specific install instructions (Claude.ai, Claude Code, Codex, OpenCode, Grok, Anthropic API, Cursor, Continue.dev) and the full compatibility table.
 
-The install steps are intentionally kept in a separate file from this README. Skill registries (ClawHub, hermes hub) scan public-facing docs for agent-environment persistence patterns; putting the install details in a dedicated file keeps the scan clean.
+Installation instructions live in a separate file to keep this README focused on purpose, usage, and evaluation. The install file contains only user-directed setup steps; the skill has no runtime dependency on background services, MCP tools, network access, or environment persistence.
+
+### Activation boundaries
+
+This skill should be invoked only for high-stakes, ambiguous, or strategically loaded reasoning tasks. It should not activate for simple lookups, routine editing, purely computational tasks, or situations where the user has not asked for deeper clarification.
 
 ---
 
