@@ -168,7 +168,7 @@ When running with Figma access:
 - Bringhurst, R. (2012). *The Elements of Typographic Style* (4th ed.). Hartley & Marks — inverse relationship between type size and tracking (larger size → tighter letter-spacing) for sentence-case text; em dash as the unspaced default parenthetical mark.
 - Felici, J. (2003). *The Complete Manual of Typography*. Adobe Press — how x-height and glyph width should drive line-height and tracking selection per typeface.
 - Butterick, M. *Practical Typography*. — all-caps text needs added letter-spacing (5–12%) because default font spacing is tuned for mixed-case letterforms; heavier weights carry proportionally less need for it since strokes already fill more of the counter.
-- Schoger, A. (2018). *Refactoring UI*. — practical uppercase/small-caps tracking values by size band, and UI text minimum-size floor.
+- Wathan, A., Schoger, S. (2018). *Refactoring UI*. — practical uppercase/small-caps tracking values by size band, and UI text minimum-size floor.
 - Hunt, R. — spaced en dash as a lighter-weight alternative to the em dash for sentence-level parenthetical breaks, when a house style prefers it.
 - OpenType `case` feature (case-sensitive forms) — raises punctuation (hyphens, dashes, parentheses) to align with cap-height in all-caps/small-caps text.
 - Felici, J. (2003). *The Complete Manual of Typography*. Adobe Press — oldstyle vs. lining figures, and their correct role split between running prose and tabular/display contexts.

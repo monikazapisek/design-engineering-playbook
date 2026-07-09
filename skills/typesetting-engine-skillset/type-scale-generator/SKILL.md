@@ -113,5 +113,5 @@ When running with Figma access and asked to apply the scale to existing text sty
 - Santa Maria, J. (2014). *On Web Typography*. A Book Apart — musical-interval scales and the Fibonacci sequence as alternatives to a single fixed ratio.
 - Kunz, W. (1998). *Typography: Macro- and Microaesthetics*. Niggli — historical printer's type-size series (Garamond-era steps).
 - Felici, J. (2003). *The Complete Manual of Typography*. Adobe Press — traditional point-size series predating digital, arbitrary-precision scales.
-- Schoger, A. (2018). *Refactoring UI*. — minimum readable UI text size (12px floor) and its interaction with font weight.
+- Wathan, A., Schoger, S. (2018). *Refactoring UI*. — minimum readable UI text size (12px floor) and its interaction with font weight.
 - Related skills: [`text-typesetting`](../text-typesetting/README.md) (line-height/tracking per size), [`vertical-spacing`](../vertical-spacing/README.md) (rhythm between the blocks this scale produces).

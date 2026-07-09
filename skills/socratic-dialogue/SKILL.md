@@ -104,11 +104,11 @@ metadata:
 
 ## 8. Bibliography
 
-* [Harb 2025] Harb, R. et al. — *Towards Philosophical Reasoning with Agentic LLMs in Experimental Science.* DOI: 10.1088/2632-2153/ae277f.
+* [Harb 2025] Harb, H. et al. — *Towards Philosophical Reasoning with Agentic LLMs: Socratic Method for Scientific Assistance.* Machine Learning: Science and Technology. DOI: 10.1088/2632-2153/ae277f.
 * [He 2024] He, J. et al. — *SOCREVAL: Large Language Models with the Socratic Method for Automatic Abstract Screening in Systematic Reviews.* arXiv: 2310.00074.
 * [Qi 2023] Qi, J. et al. — *The Art of Socratic Questioning: Recursive Thinking with Large Language Models.* arXiv: 2305.14999.
-* [Chang 2023] Chang, Y. — *Prompting Large Language Models with the Socratic Method.* arXiv: 2303.08769.
-* [Lumnitz 2026] Lumnitz, D. — *The Socratic Prompt: Stop Guessing and Start Thinking.* Towards AI.
+* [Chang 2023] Chang, E. Y. — *Prompting Large Language Models with the Socratic Method.* arXiv: 2303.08769.
+* [Lumnitz 2026] Lumnitz, U. — *The Socratic Prompt: How to Make a Language Model Stop Guessing and Start Thinking.* Towards AI.
 * [Vlastos 1983] Vlastos, G. — *The Socratic Elenchus.* Oxford Studies in Ancient Philosophy.
 * [Seeskin 1987] Seeskin, K. — *Dialogue and Discovery: A Study in Socratic Method.* SUNY Press.
 
