@@ -69,7 +69,6 @@ kano-model-strategist/
 ├── ATTRIBUTION.md                  ← source citations and license chain
 ├── EVIDENCE.md                     ← Path B eval results
 ├── LICENSE                         ← MIT
-├── SYNCHRONIZATION.md              ← source-of-truth ↔ public copy mapping
 └── references/
     ├── kano-classification.md      ← 2-question pair, full category table, edge cases
     ├── kano-vs-mdpmvp.md           ← Kano × MDP × MVP decision logic

@@ -69,7 +69,6 @@ legible-agent-output/
 ├── ATTRIBUTION.md                  ← source citations and license chain
 ├── EVIDENCE.md                     ← Path B eval results
 ├── LICENSE                         ← MIT
-├── SYNCHRONIZATION.md              ← source-of-truth ↔ public copy mapping
 ├── with-skill.md                   ← Path B output (with-skill condition)
 ├── baseline.md                     ← Path B output (baseline condition)
 ├── references/

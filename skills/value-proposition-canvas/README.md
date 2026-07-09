@@ -90,7 +90,6 @@ value-proposition-canvas/
 ├── README.md                       ← this file
 ├── SKILL.md                        ← what the agent loads (frontmatter + Phase 1/2/2.5 + Quality Checklist)
 ├── ATTRIBUTION.md                  ← source citations and license chain
-├── SYNCHRONIZATION.md              ← source-of-truth ↔ public copy mapping
 ├── LICENSE                         ← MIT
 ├── references/
 │   ├── methodology-vpc.md          ← 74 KB: 7 progressive-disclosure layers + Section 0 (GOOB) + Section 5 (Scope Boundary) + Section 6 (Gold Standard v2.0 template) + 2 appendices
