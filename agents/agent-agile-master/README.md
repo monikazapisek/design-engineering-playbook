@@ -42,7 +42,6 @@ agent-agile-master/
 ├── ATTRIBUTION.md                    # Third-party framework attributions (18+ sources)
 ├── EVIDENCE.md                       # Skill evaluation and evidence base
 ├── LICENSE                           # MIT license
-├── SYNCHRONIZATION.md                # How to sync canonical ↔ public mirror
 ├── README.md                         # This file (navigation)
 ├── INSTALL.md                        # Installation guide (3 options)
 └── skills/                           # Ritual procedures
@@ -98,5 +97,3 @@ Public version available at:
 `projects/design-engineering-playbook/agents/agent-agile-master/`
 
 Canonical version (with private knowledge references) lives in `.agents/agents/agent-agile-master/`.
-
-See [SYNCHRONIZATION.md](./SYNCHRONIZATION.md) for sync procedure.
