@@ -414,6 +414,31 @@ WHAT NOT TO DO
 - Do not split Acceptance Criteria into a separate sticky.
 - Do not number stories with manual IDs like [STORY_01_03].
   Mapping is algorithmic by X. Manual IDs are waste.
+
+--------------------------------------------------
+RECOMMENDED READING
+--------------------------------------------------
+This Story Map template & skill integrates the following world-class agile
+methodologies:
+
+- User Story Mapping (Jeff Patton): The core 2D structure (Horizontal Sequence
+  / Vertical Slices) is based on Patton's technique for building shared
+  understanding and visualizing the 'Walking Skeleton'.
+
+- Better User Stories (Mike Cohn): The hierarchy of Activities, Tasks, and
+  Stories, along with the 'Significant Objective' framing, follows Cohn's
+  strategic approach to backlog refinement.
+
+- Continuous Discovery Habits (Teresa Torres): The 'Problem Framing' and
+  'Strategic Context' placeholders ensure that the map remains aligned with
+  validated user opportunities and business outcomes.
+
+- Escaping the Build Trap (Melissa Perri): The release strategy (V1-V3) is
+  designed to prioritize validated value over simple output, ensuring the
+  team solves real business problems.
+
+- Lean UX (Jeff Gothelf & Josh Seiden): The inclusion of 'Core Value Proof'
+  in V1 reflects the hypothesis-driven approach to product design.
 ==================================================
 ```
 
