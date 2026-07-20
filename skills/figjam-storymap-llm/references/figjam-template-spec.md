@@ -1,35 +1,35 @@
 ---
 created: 2026-07-20
 updated: 2026-07-20
-version: 1.0
-description: Kanoniczna specyfikacja szablonu FigJam Story Map (LLM-ready). Zbudowana na podstawie boardu product-handoff-lab.
+version: 1.1
+description: Canonical specification for the LLM-ready FigJam Story Map template (Patton methodology). Built and validated on a real product-handoff-lab board.
 ---
 
 # FigJam Story Map Template — LLM-ready (Patton methodology)
 
-Szablon kanwy FigJam zgodny z metodyką Jeffa Pattona i zoptymalizowany pod bezbłędne czytanie przez LLM (REST API JSON + Vision). Zbudowany i przetestowany na realnym boardzie `product-handoff-lab` (Symphonia Score — Design System sprzedażowy).
+FigJam canvas template compliant with Jeff Patton's User Story Mapping methodology, optimised for error-free reading by LLMs (REST API JSON + Vision). Built and tested on a real `product-handoff-lab` board (Symphonia Score — paid design-system product).
 
-## Struktura kanwy
+## Canvas structure
 
 ```
-[STORY_MAP]                                    ← root SECTION (wrapper, wymog)
-├── [00_SECTION_AI_Readme]                     ← system prompt + legenda
-├── [TEMPLATE_META]                            ← attribution block (author, version, license, repo)
-├── [USER_SEGMENT_or_PERSONA]                  ← persona + Name + Description (opcjonalny obraz)
-├── [01_SECTION_BACKBONE_Activities]           ← backbone L1
+[STORY_MAP]                                    ← root SECTION (wrapper, required)
+├── [00_SECTION_AI_Readme]                     ← system prompt + legend
+├── [TEMPLATE_META]                             ← attribution block (author, version, license, repo)
+├── [USER_SEGMENT_or_PERSONA]                  ← persona + Name + Description (optional image)
+├── [01_SECTION_BACKBONE_Activities]            ← backbone L1
 │   └── [ACT_01] Activity  ·  [ACT_02] Activity
 ├── [02_SECTION_BACKBONE_User_Tasks]           ← backbone L2
 │   └── [TASK_01] Task  ·  [TASK_02] Task  ·  [TASK_03] Task
-├── [03_SECTION_Release_1] Core Value Proof    ← V1 z pełną taksonomią
-├── [04_SECTION_Release_2] Business Goal ...    ← V2 czyste
-└── [05_SECTION_Release_3] Business Goal ...    ← V3 czyste
+├── [03_SECTION_Release_1] Core Value Proof     ← V1 with full taxonomy
+├── [04_SECTION_Release_2] Business Goal ...    ← V2 clean
+└── [05_SECTION_Release_3] Business Goal ...    ← V3 clean
 ```
 
 ## Template Metadata — attribution block `[TEMPLATE_META]`
 
-Wstaw jako osobny Section między `[00_SECTION_AI_Readme]` a `[USER_SEGMENT_or_PERSONA]`. Parser go zignoruje (czyta tylko STICKY/SHAPE_WITH_TEXT/CONNECTOR z tagami `[STORY]`/`[ACT]`/`[TASK]` — ten block to zwykły tekst). Czysty separation of concerns: instrukcja dla agenta w `[00]`, attribution człowieka w `[TEMPLATE_META]`, content mapy w pozostałych sekcjach.
+Insert as a separate Section between `[00_SECTION_AI_Readme]` and `[USER_SEGMENT_or_PERSONA]`. The parser ignores it (it reads only STICKY / SHAPE_WITH_TEXT / CONNECTOR with `[STORY]` / `[ACT]` / `[TASK]` tags — this block is plain text). Clean separation of concerns: agent instructions in `[00]`, human attribution in `[TEMPLATE_META]`, map content in the remaining sections.
 
-### Kanoniczna treść `[TEMPLATE_META]`
+### Canonical `[TEMPLATE_META]` content
 
 ```text
 Author: Monika Zapisek
@@ -48,53 +48,53 @@ FigJam and Figma are trademarks of Figma, Inc. This template is
 independent and not affiliated with, endorsed by, or sponsored by Figma, Inc.
 ```
 
-### Co musi zawierać `[TEMPLATE_META]`
+### What `[TEMPLATE_META]` must contain
 
-| Pole | Wartość | Dlaczego |
+| Field | Value | Why |
 |---|---|---|
-| Author | Imię i nazwisko | Build-in-public credit, social proof — każdy kto duplikuje template widzi autorat |
-| Website | URL autora | Profile visits → followers |
-| Created | data ISO 8601 (`YYYY-MM-DD`) | Kiedy template powstał — trackowanie używanych wersji |
-| Last Updated | data ISO 8601 (`YYYY-MM-DD`) | Bump przy każdej zmianie — użytkownicy wiedzą czy mają świeżą wersję |
-| Version | semver (`1.0`, `1.1`, `2.0`) | Wersjonowanie template'u — ważne gdy template jest forkowany/duplikowany |
-| Licence | `MIT` (lub inna) | Wyraźne oświadczenie licencji — użytkownicy wiedzą czy mogą duplikować/modyfikować/sprzedawać |
-| Skill (GitHub) | pełny URL do folderu skilla w repo | Otwiera landing page folderu (renderowany README) — kieruje do parsera, pełnej procedury, source code |
-| Skill (ClawHub) | `https://clawhub.ai/monikazapisekstudio/skills/figjam-storymap-llm` | ClawHub to skills marketplace — jeden klik install dla Claude Code / Cursor / Copilot. Preferuj ten link w template (install path), GitHub jako source-of-truth w repo skilli |
-| Credit appreciated | miękka prośba o cytowanie | Etyczny ask (MIT nie wymaga), buduje authority loop — każdy screenshot z template = darmowa reklama |
-| Trademark disclaimer | FigJam/Figma = Figma, Inc. | Defense-in-depth — nominative fair use jest legalne, disclaimer to safety net |
+| Author | Full name | Build-in-public credit, social proof — anyone who duplicates the template sees the author |
+| Website | Author URL | Profile visits → followers |
+| Created | ISO 8601 date (`YYYY-MM-DD`) | When the template was created — tracking which version is in use |
+| Last Updated | ISO 8601 date (`YYYY-MM-DD`) | Bump on every change — users know whether they have the fresh version |
+| Version | semver (`1.0`, `1.1`, `2.0`) | Template versioning — important when the template is forked / duplicated |
+| Licence | `MIT` (or other) | Explicit licence statement — users know whether they can duplicate / modify / sell |
+| Skill (GitHub) | full URL to the skill folder in the repo | Opens the folder landing page (rendered README) — routes to parser, full procedure, source code |
+| Skill (ClawHub) | `https://clawhub.ai/monikazapisekstudio/skills/figjam-storymap-llm` | ClawHub is a skills marketplace — one-click install for Claude Code / Cursor / Copilot. Prefer this link in templates (install path), GitHub as source-of-truth in skill repos |
+| Credit appreciated | soft request for citation | Ethical ask (MIT does not require it), builds the authority loop — every screenshot of the template = free advertising |
+| Trademark disclaimer | FigJam/Figma = Figma, Inc. | Defense-in-depth — nominative fair use is legal, disclaimer is a safety net |
 
-### Czego NIE wstawiać w `[TEMPLATE_META]`
+### What NOT to put in `[TEMPLATE_META]`
 
-- ❌ Pełny tekst licencji MIT (21 linii — link do repo wystarczy)
-- ❌ E-mail kontaktowy (spam risk — masz Website)
-- ❌ `© 2026 Monika Zapisek` — MIT LICENSE już to zawiera, nie dubluj
-- ❌ `All rights reserved` — MIT jest permissive, "all rights reserved" przeczy licencji
-- ❌ Long description skilla — to jest w README repo, nie na kanwie
-- ❌ Follow / X handle — opcjonalnie, tylko jeśli masz aktywne konto i chcesz audience
+- ❌ Full MIT licence text (21 lines — a repo link is enough)
+- ❌ Contact email (spam risk — you have a Website)
+- ❌ `© 2026 Monika Zapisek` — MIT LICENSE already contains it, do not duplicate
+- ❌ "All rights reserved" — MIT is permissive, "all rights reserved" contradicts the licence
+- ❌ Long skill description — that lives in the repo README, not on the canvas
+- ❌ Follow / X handle — optional, only if you have an active account and want to build an audience
 
-## Kolorystyka (semantyka + deterministyczne dla Vision LLM)
+## Colour palette (semantic + deterministic for Vision LLM)
 
-| Sekcja / element | Kolor HEX | Znaczenie |
+| Section / element | HEX | Meaning |
 |---|---|---|
-| `[ACT_*]` Activity | `#FFD9E2` / `rgba(255, 217, 226, 0.77)` | Backbone L1 — główny cel użytkownika |
-| `[TASK_*]` Task | `#FFE5D2` | Backbone L2 — krok w procedurze |
-| `[STORY] [V1]` | `#E6F6C3` (jasny zielony) | Release 1 — MVP / Core Value |
-| `[STORY] [V2]` | `#E5F3FE` (jasny niebieski) | Release 2 — Growth |
-| `[STORY] [V3]` | `#F3EEFF` (jasny fioletowy) | Release 3 — Scale / Vision |
-| Persona (sticky) | `#B3EFBD`, `#B3F4EF`, `#FFD3A8`, `#D3BDFF` | 4 segmenty: Designer / Developer / End-user / AI-agent |
-| Connectors (default) | `#D5C2C5` | Przyczynowo-skutkowe |
-| Connectors (block) | czerwony | Blokady (A BLOCKS B) |
+| `[ACT_*]` Activity | `#FFD9E2` / `rgba(255, 217, 226, 0.77)` | Backbone L1 — main user goal |
+| `[TASK_*]` Task | `#FFE5D2` | Backbone L2 — step in the procedure |
+| `[STORY] [V1]` | `#E6F6C3` (light green) | Release 1 — MVP / Core Value |
+| `[STORY] [V2]` | `#E5F3FE` (light blue) | Release 2 — Growth |
+| `[STORY] [V3]` | `#F3EEFF` (light purple) | Release 3 — Scale / Vision |
+| Persona (sticky) | `#B3EFBD`, `#B3F4EF`, `#FFD3A8`, `#D3BDFF` | 4 segments: Designer / Developer / End-user / AI-agent |
+| Connectors (default) | `#D5C2C5` | Causal relations |
+| Connectors (block) | red | Blockers (A BLOCKS B) |
 
-## Typografia
+## Typography
 
 - **Title (Story Map):** Inter Bold 96px
-- **Section header (Activity / Task / Release):** Inter Bold 96px, kolor sekcji
-- **Description text:** Inter Medium 40px, kolor sekcji
+- **Section header (Activity / Task / Release):** Inter Bold 96px, section colour
+- **Description text:** Inter Medium 40px, section colour
 - **Sticky text:** Inter Medium 16px
 
-## Taksonomia tagów na kartkach
+## Sticky tag taxonomy
 
-### Story (V1 — pełna)
+### Story (V1 — full)
 
 ```text
 [STORY] [V1] [P1] User Story sentence @DEV
@@ -103,7 +103,7 @@ AC:
 - Acceptance criterion 2
 ```
 
-### Story (V2 / V3 — czyste)
+### Story (V2 / V3 — clean)
 
 ```text
 [STORY] [V2] User Story sentence
@@ -111,7 +111,7 @@ AC:
 - Acceptance criterion 1
 ```
 
-**Zero `[P*]`, zero `@Owner` w V2/V3** (Lean UX — planowanie odległych hipotez = Big Upfront Design).
+**Zero `[P*]`, zero `@Owner` in V2/V3** (Lean UX — planning distant hypotheses is Big Upfront Design).
 
 ### Activity (backbone L1)
 
@@ -125,29 +125,29 @@ AC:
 [TASK_01] Task
 ```
 
-## Layout (osi X i Y)
+## Layout (X and Y axes)
 
-- **Oś X (chronologia):** lewa → prawa. `[ACT_01]` → `[ACT_02]`, wewnątrz activity `[TASK_01]` → `[TASK_02]` → `[TASK_03]`. Każdy task to osobna kolumna.
-- **Oś Y (priorytet / release):** góra → dół. Backbone u góry (Activities, potem Tasks), release slice'y pod spodem (V1, V2, V3).
-- **Story w release:** kartka `[STORY]` układa się w pionowym słupku pod taskiem do którego należy (algorytm parsera: `center_x` story musi wpaść w range X taska).
-- **Odstępy między kolumnami:** 40–60 px w poziomie — daje algorytmowi margines błędu.
-- **NIE nakładaj kolumn:** dopóki kartka z jednej kolumny nie wjedzie do połowy szerokości pod sąsiednie zadanie, parser się nie pomyli.
+- **X axis (chronology):** left → right. `[ACT_01]` → `[ACT_02]`, within an activity `[TASK_01]` → `[TASK_02]` → `[TASK_03]`. Each task is its own column.
+- **Y axis (priority / release):** top → bottom. Backbone at the top (Activities, then Tasks), release slices below (V1, V2, V3).
+- **Story in a release:** a `[STORY]` sticky stacks vertically under the task it belongs to (parser algorithm: `center_x` of the story must fall within the task's X range).
+- **Column spacing:** 40–60 px horizontally — gives the algorithm a large error margin.
+- **Do not overlap columns:** as long as a sticky from one column does not slide more than halfway under the neighbouring task, the parser will not misfire.
 
 ## Connectors
 
-### Kiedy używać
+### When to use
 
-- **Branching (odgałęzienia):** `[STORY_05] --[IF_FAIL]--> [STORY_05B] Ekran błędu`
+- **Branching (alternative flows):** `[STORY_05] --[IF_FAIL]--> [STORY_05B] Error screen`
 - **Cross-release dependencies:** `[STORY_12_V2] --[REQUIRES]--> [STORY_03_V1]`
-- **Kryteria akceptacji notatki:** (choć preferowane: AC w tej samej kartce co story)
+- **Acceptance criteria / notes:** a clarifying sticky attached to the main story (though AC inline in the same sticky is preferred)
 
-### Kiedy NIE używać
+### When NOT to use
 
-- **Liniowy przepływ chronologiczny** (krok 1 → krok 2 → krok 3). Chronologia kodowana jest w pozycji X + numeracji `[TASK_*]`. 100 strzałek = spaghetti payload.
+- **Linear chronological flow** (step 1 → step 2 → step 3). Chronology is encoded in X position + `[TASK_*]` numbering. 100 arrows = spaghetti payload.
 
-## `[00_SECTION_AI_Readme]` — instrukcja dla agenta
+## `[00_SECTION_AI_Readme]` — agent instruction
 
-Wstaw na początku kanwy (najlepiej `x: 0, y: 0` względem roota) sekcję z instrukcją. To jest brain agenta na kanwie — bez tego agent zgaduje, z tym agent działa deterministycznie. Wstaw jako **jeden TEXT node** (nie rozbijaj na osobne kartki — agent czyta to jako jeden dokument instrukcji).
+Insert at the start of the canvas (ideally `x: 0, y: 0` relative to the root). This is the agent's brain on the canvas — without it the agent guesses, with it the agent acts deterministically. Insert as **a single TEXT node** (do not split into separate stickies — the agent reads this as one instruction document).
 
 ```text
 ==================================================
@@ -268,42 +268,42 @@ FLAG (active coach — do not silently fix, report with node IDs and smallest co
 ==================================================
 ```
 
-**Wskazówka:** W powyższym bloku podmień `[PRODUCT NAME]` na faktyczną nazwę swojego produktu przed publikacją template'u.
+**Tip:** In the block above, replace `[PRODUCT NAME]` with the actual product name before publishing the template.
 
 ## Pre-publish checklist (10 min)
 
-Przed opublikowaniem szablonu jako "LLM-ready FigJam Story Map", sprawdź:
+Before publishing the template as an "LLM-ready FigJam Story Map", verify:
 
-- [ ] **Root `[STORY_MAP]`** owija całą kanwę (zero `unsectioned_nodes` w JSON)
-- [ ] **`[00_SECTION_AI_Readme]`** istnieje i zawiera legenda + connector rules + expected output
-- [ ] **`[TEMPLATE_META]`** istnieje między `[00]` a `[USER_SEGMENT]` — zawiera Author, Created, Last Updated, Version, Licence, Skill URL, credit appreciated, trademark disclaimer
-- [ ] **`[01_SECTION_BACKBONE_Activities]`** zawiera tylko `[ACT_*]`
-- [ ] **`[02_SECTION_BACKBONE_User_Tasks]`** zawiera tylko `[TASK_*]`, kolumny mają 40–60 px odstępu
-- [ ] **`[03_SECTION_Release_1] Core Value Proof`** — kartki `[STORY] [V1]` z `[P1]/[P2]/[P3]`, `@Owner`, AC inline
-- [ ] **`[04_SECTION_Release_2]`** i **`[05_SECTION_Release_3]`** — kartki `[STORY] [V2]/[V3]` czyste (zero `[P*]`, zero `@Owner`)
-- [ ] **AC inline** — w tej samej kartce co `[STORY]`, po `AC:`
-- [ ] **Connectors** tylko do branching / cross-release dependencies
-- [ ] **Wewnętrzne nagłówki tekstowe** w każdej sekcji (defense vs `Copy as PNG` ucina nazwy sekcji)
-- [ ] **Brak FigJam Stamps / Badges** jako nośniki informacji (prefiksy tekstowe w kartce zamiast)
-- [ ] **`Last Updated`** w `[TEMPLATE_META]` zaktualizowane przed publikacją (data dzisiejsza ISO 8601)
+- [ ] **Root `[STORY_MAP]`** wraps the entire canvas (zero `unsectioned_nodes` in JSON)
+- [ ] **`[00_SECTION_AI_Readme]`** exists and contains legend + connector rules + expected output
+- [ ] **`[TEMPLATE_META]`** exists between `[00]` and `[USER_SEGMENT]` — contains Author, Created, Last Updated, Version, Licence, Skill URL, credit appreciated, trademark disclaimer
+- [ ] **`[01_SECTION_BACKBONE_Activities]`** contains only `[ACT_*]`
+- [ ] **`[02_SECTION_BACKBONE_User_Tasks]`** contains only `[TASK_*]`, columns have 40–60 px spacing
+- [ ] **`[03_SECTION_Release_1] Core Value Proof`** — `[STORY] [V1]` stickies with `[P1]/[P2]/[P3]`, `@Owner`, AC inline
+- [ ] **`[04_SECTION_Release_2]`** and **`[05_SECTION_Release_3]`** — `[STORY] [V2]/[V3]` stickies clean (zero `[P*]`, zero `@Owner`)
+- [ ] **AC inline** — in the same sticky as `[STORY]`, after `AC:`
+- [ ] **Connectors** only for branching / cross-release dependencies
+- [ ] **Internal text headers** in each section (defense against `Copy as PNG` clipping section labels)
+- [ ] **No FigJam Stamps / Badges** as information carriers (use text prefixes inside the sticky instead)
+- [ ] **`Last Updated`** in `[TEMPLATE_META]` refreshed before publishing (today's ISO 8601 date)
 
-## Test parsera (po wypełnieniu szablonu)
+## Parser test (after filling the template)
 
 ```bash
 python scripts/figjam_parser.py --file-key {FILE_KEY} --token $FIGMA_TOKEN > story-map.md
 ```
 
-Sprawdź:
+Verify:
 
-- Każda `[STORY]` ma przypisany `[TASK]` (lub flaga `UNASSIGNED`)
-- AC są w tej samej sekcji co story
-- V2/V3 są czyste
-- Connectory renderują się jako `A --[label]--> B`
+- Each `[STORY]` has an assigned `[TASK]` (or is flagged `UNASSIGNED`)
+- AC stays in the same section as the story
+- V2 / V3 are clean
+- Connectors render as `A --[label]--> B`
 
-## Adnotacje Patellean (z Patton + Lean UX)
+## Pattoian notes (Patton + Lean UX)
 
-- **Release nazewnictwo:** `Core Value Proof`, `Business Goal or Outcome` — outcome, nie "v2 dla v2". Patton zachęca do podawania krótkiego celu biznesowego obok numeru wersji.
-- **Priorytety tylko w V1:** pozycja na osi Y w V1 + `[P1]/[P2]/[P3]` wewnątrz release. V2/V3 to hipotezy.
-- **Owner tylko w V1:** przypisanie wykonawców do funkcji odległych = noise.
-- **Story Map = perspektywa usera, nie wykonawcy.** Activities/Steps opisują co **użytkownik** robi ("Buy Component Package", "Check External Documentation"), nie co zespół buduje ("Build X", "Create Y").
-- **Termin "Task" (nie "Step").** Standard Patton dla backbone L2.
+- **Release naming:** `Core Value Proof`, `Business Goal or Outcome` — outcome, not "v2 for v2". Patton encourages giving a short business goal next to the version number.
+- **Priorities only in V1:** position on the Y axis within V1 + `[P1]/[P2]/[P3]` inside the release. V2 / V3 are hypotheses.
+- **Owner only in V1:** assigning owners to distant features is noise.
+- **Story Map = user perspective, not builder perspective.** Activities / Steps describe what the **user** does ("Buy Component Package", "Check External Documentation"), not what the team builds ("Build X", "Create Y").
+- **Term "Task" (not "Step").** Patton standard for backbone L2.

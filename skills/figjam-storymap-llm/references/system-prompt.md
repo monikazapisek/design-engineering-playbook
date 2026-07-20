@@ -2,7 +2,7 @@
 created: 2026-07-20
 updated: 2026-07-20
 version: 1.0
-description: System Prompt dla agenta AI parsującego FigJam Story Map (Patton methodology, LLM-ready).
+description: System Prompt for an AI agent parsing a FigJam Story Map (Patton methodology, LLM-ready).
 ---
 
 # System Prompt — FigJam Story Map Parser

@@ -33,7 +33,7 @@ import requests
 
 FIGMA_API_BASE = "https://api.figma.com/v1/files/{file_key}"
 
-# Sekcje kanoniczne (kolejność ma znaczenie dla renderu)
+# Canonical sections (order matters for rendering)
 SECTION_ROOT = "[STORY_MAP]"
 SECTION_AI_README = "[00_SECTION_AI_Readme]"
 SECTION_PERSONA = "[USER_SEGMENT_or_PERSONA]"
@@ -79,7 +79,7 @@ class StickyItem:
 
 @dataclass
 class TaskItem:
-    """[TASK_XX] z backbone — definiuje kolumnę na osi X."""
+    """[TASK_XX] from the backbone — defines a column on the X axis."""
 
     id: str
     name: str
@@ -97,7 +97,7 @@ class TaskItem:
 
 @dataclass
 class ActivityItem:
-    """[ACT_XX] z backbone — User Activity (główny cel)."""
+    """[ACT_XX] from the backbone — User Activity (main user goal)."""
 
     id: str
     name: str
@@ -105,7 +105,7 @@ class ActivityItem:
 
 @dataclass
 class Connector:
-    """Relacja między kartkami przez natywny Connector FigJam."""
+    """Relation between stickies via a native FigJam Connector."""
 
     from_id: Optional[str]
     to_id: Optional[str]
@@ -113,7 +113,7 @@ class Connector:
 
 
 def fetch_figjam(file_key: str, token: str) -> Dict[str, Any]:
-    """Pobiera drzewo obiektów FigJam przez Figma REST API."""
+    """Fetches the FigJam object tree via the Figma REST API."""
     url = FIGMA_API_BASE.format(file_key=file_key)
     headers = {"X-Figma-Token": token}
     response = requests.get(url, headers=headers, timeout=60)
@@ -122,7 +122,7 @@ def fetch_figjam(file_key: str, token: str) -> Dict[str, Any]:
 
 
 def get_bbox(node: Dict[str, Any]) -> Tuple[float, float, float, float]:
-    """Wyciąga (x, y, width, height) z absoluteBoundingBox lub layout.locationRelativeToParent."""
+    """Extracts (x, y, width, height) from absoluteBoundingBox or layout.locationRelativeToParent."""
     bbox = node.get("absoluteBoundingBox") or {}
     if bbox:
         return (
@@ -143,12 +143,12 @@ def get_bbox(node: Dict[str, Any]) -> Tuple[float, float, float, float]:
 
 
 def get_text(node: Dict[str, Any]) -> str:
-    """Wyciąga tekst z pola `characters`."""
+    """Extracts text from the `characters` field."""
     return (node.get("characters") or "").strip()
 
 
 def get_color(node: Dict[str, Any]) -> Optional[str]:
-    """Wyciąga pierwszy kolor fill."""
+    """Extracts the first fill colour."""
     fills = node.get("fills") or []
     if fills and isinstance(fills, list):
         first = fills[0]
@@ -179,7 +179,7 @@ def parse_release_from_section(name: str) -> Optional[str]:
 
 
 def parse_story_text(text: str) -> Dict[str, Any]:
-    """Parsuje treść kartki [STORY] na komponenty."""
+    """Parses a [STORY] sticky's content into its components."""
     result: Dict[str, Any] = {
         "release": None,
         "priority": None,
@@ -203,19 +203,19 @@ def parse_story_text(text: str) -> Dict[str, Any]:
     if owner_match:
         result["owner"] = owner_match.group(0).upper()
 
-    # Split na sekcję AC (po "AC:" lub po podwójnym newline)
+    # Split into the AC section (after "AC:" or after a double newline)
     ac_split = re.split(r"\n\s*AC\s*:?\s*\n", text, maxsplit=1)
     main_part = ac_split[0]
     ac_part = ac_split[1] if len(ac_split) > 1 else ""
 
-    # Usuń tagi z głównego zdania
+    # Remove tags from the main sentence
     sentence = re.sub(r"\[(STORY|V[123]|P[123])\]", "", main_part)
     sentence = re.sub(r"@(UX|DEV|PM|BIZ|QA)", "", sentence, flags=re.IGNORECASE)
     sentence = re.sub(r"\s+", " ", sentence).strip()
     result["story_sentence"] = sentence or None
 
     if ac_part:
-        # AC jako linie po myślniku lub newline
+        # AC as lines after a dash or newline
         lines = [ln.strip().lstrip("-").strip() for ln in re.split(r"\n", ac_part) if ln.strip()]
         result["acceptance_criteria"] = [ln for ln in lines if ln]
 
@@ -232,7 +232,7 @@ def traverse(
     activities: List[ActivityItem],
     connectors: List[Connector],
 ) -> None:
-    """Rekurencyjne przejście drzewa węzłów FigJam."""
+    """Recursive traversal of the FigJam node tree."""
     node_type = node.get("type")
     node_id = node.get("id", "")
     node_name = node.get("name", "")
@@ -348,12 +348,12 @@ def map_stories_to_tasks(stickies: List[StickyItem], tasks: List[TaskItem]) -> N
 
 def map_tasks_to_activities(tasks: List[TaskItem], activities: List[ActivityItem]) -> None:
     """Mapuje [TASK] do [ACT] — w prostej wersji: pozycja Y (activity nad task)."""
-    # W FigJam template: activities leżą nad tasks w tej samej kolumnie X.
+    # In the FigJam template: activities sit above tasks in the same X column.
     # Mapowanie przez overlap X (prosty nearest).
     if not activities:
         return
     for t in tasks:
-        # Tu można rozszerzyć o pozycje activities — na razie zostawiamy puste
+        # This can be extended with activity positions — left empty for now
         t.activity_id = None
 
 
@@ -373,7 +373,7 @@ def render_markdown(
     activities: List[ActivityItem],
     connectors: List[Connector],
 ) -> str:
-    """Renderuje ustrukturyzowany Markdown z hierarchią Release → Activity → Task → Story."""
+    """Renders structured Markdown with the hierarchy Release → Activity → Task → Story."""
     out: List[str] = ["# Story Map — parsed backlog\n"]
     out.append("_Source: FigJam, parsed by `figjam-storymap-llm` skill._\n")
 
@@ -519,9 +519,9 @@ def main() -> int:
         "--format",
         choices=["markdown", "json"],
         default="markdown",
-        help="Format wyjścia.",
+        help="Output format.",
     )
-    parser.add_argument("--input", help="Opcjonalnie: ścieżka do zapisanego JSON FigJam (zamiast API).")
+    parser.add_argument("--input", help="Optional: path to a saved Figma JSON file (instead of live API).")
 
     args = parser.parse_args()
 
