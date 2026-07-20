@@ -1,1 +1,33 @@
 .obsidian/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets / private
+.env
+.env.*
+!.env.example
+priv/
+_vault/
+_knowledge/
+secrets/
+
+# Parser / skill outputs (do not commit parsed artifacts)
+story-map.md
+story-map.json
+*-audit-report.md
+output/
