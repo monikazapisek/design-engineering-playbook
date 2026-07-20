@@ -5,8 +5,9 @@ FigJam Story Map parser (Jeff Patton methodology) -> Markdown / JSON.
 
 Reads a FigJam board via the Figma REST API, groups stickies / shapes into
 sections, maps User Stories to Tasks algorithmically by the X axis, and
-renders a structured backlog ready for Notion / Linear / Jira or as context
-for a coding agent (Cursor, Claude Code, Copilot).
+renders a structured Markdown / JSON output. From there you can convert it to
+a Notion page, Linear/Jira CSV import, or paste it into a coding agent
+(Cursor, Claude Code, Copilot) as living spec.
 
 Usage:
     python figjam_parser.py --file-key {FILE_KEY} --token $FIGMA_TOKEN > story-map.md
@@ -650,7 +651,8 @@ def render_json(
     activities: List[ActivityItem],
     connectors: List[Connector],
 ) -> str:
-    """Render JSON for PM tooling import (Notion / Linear / Jira)."""
+    """Render JSON output. Convert it to a Notion DB, Linear/Jira CSV import,
+    or feed it to PM tooling via MCP — the parser itself stops at JSON."""
     payload = {
         "activities": [
             {"id": a.id, "name": a.name, "x": a.x, "y": a.y, "width": a.width, "height": a.height}

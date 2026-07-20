@@ -15,7 +15,8 @@ System Instructions for AI Parser
 This template turns a FigJam Story Map (Jeff Patton methodology) into
 LLM-readable Markdown / JSON — no manual transcription, no OCR, no loss
 of spatial semantics. The parser reads the board via Figma REST API and
-renders a structured backlog.
+renders a structured Markdown / JSON output — no information loss, with
+legend, following industry best practices (Patton, Cohn, Lean UX).
 
 What makes this board LLM-ready
 

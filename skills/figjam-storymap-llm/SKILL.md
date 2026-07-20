@@ -15,7 +15,7 @@ Built and validated on the real Story Map of a paid design-system product.
 
 ## When To Use
 
-- After a Story Mapping workshop in FigJam — you want a backlog in Notion, Linear, or Jira
+- After a Story Mapping workshop in FigJam — you want the board content as clean Markdown / JSON (no manual transcription), which you can then convert into a Notion page, Linear/Jira CSV import, or paste into a coding agent
 - When you want to feed a Story Map to a coding agent (Cursor, Claude Code, Copilot) as living specification
 - When auditing an existing FigJam Story Map for LLM-readiness before publishing the template
 - When writing a case study or article based on a FigJam workshop and you need the workshop output as structured data
@@ -36,7 +36,7 @@ Built and validated on the real Story Map of a paid design-system product.
 
 - **Audit mode:** Markdown report with PASS/FAIL per LLM-readiness criterion, plus concrete fix recommendations with node IDs
 - **Parse mode (default):** `story-map.md` — structured backlog: Release → Activity → Task → User Story (with AC + Owner)
-- **Parse mode (JSON):** `story-map.json` — for PM tooling import (Notion database, Linear, Jira)
+- **Parse mode (JSON):** `story-map.json` — structured data you can convert into a Notion DB, Linear/Jira CSV import, or feed to PM tooling via MCP
 
 ## Workflow
 
@@ -89,11 +89,12 @@ Check `story-map.md`:
 - V2 / V3 are clean (no `[P*]`, no `@Owner`)
 - Connectors render as `A --[label]--> B`
 
-### Step 5 — Push to PM tooling (optional, 5 min)
+### Step 5 — Use the parsed output (optional, conversion time varies)
 
-- **Notion:** create a `User Stories [DB]` with fields `Release`, `Priority`, `Owner`, `AC`, `Step` (relation)
-- **Linear / Jira:** import CSV generated from the Markdown
-- **Cursor / Claude Code:** paste as context for feature implementation — the agent sees the whole Story Map in one operation without scrolling Figma
+The parser produces Markdown + JSON. From there you can:
+- **Notion:** paste the Markdown as a page, or convert JSON to a `User Stories [DB]` with fields `Release`, `Priority`, `Owner`, `AC`, `Step` (relation) — conversion is manual or via Notion MCP
+- **Linear / Jira:** convert `story-map.json` to the tool's CSV import format (converter not bundled) — or push via MCP
+- **Cursor / Claude Code / Copilot:** paste Markdown as context for feature implementation — the agent sees the whole Story Map in one operation without scrolling Figma
 
 ## Taxonomy
 

@@ -4,13 +4,13 @@
 
 [![License: MIT](./LICENSE)](./LICENSE)
 
-An **Agent Skill** that audits and parses FigJam User Story Maps into a deterministic backlog format for Notion / Linear / Jira, or as context for coding agents (Cursor, Claude Code, Copilot).
+An **Agent Skill** that audits and parses FigJam User Story Maps into a deterministic Markdown / JSON output (no manual transcription, no OCR, no loss of spatial semantics) — which you can then convert into a Notion page, Linear/Jira CSV import, or paste into a coding agent (Cursor, Claude Code, Copilot) as living spec.
 
 This is the GitHub-facing landing page. The agent-facing working document is [`SKILL.md`](./SKILL.md) — full procedure, taxonomy, quality checklist, Map Structure Guardian rules, and anti-patterns.
 
 ## Why
 
-After a Story Mapping workshop, the team typically transcribes hundreds of sticky notes by hand into Jira / Linear. That is the worst kind of waste: workshop intent gets lost, the spatial semantics of the map are flattened, and the backlog drifts away from what was actually agreed.
+After a Story Mapping workshop, the team typically transcribes hundreds of sticky notes by hand into Jira / Linear. That is the worst kind of waste: workshop intent gets lost, the spatial semantics of the map are flattened, and the workshop output drifts away from what was actually agreed.
 
 **This skill eliminates the transcription step.** It reads the FigJam board via the Figma REST API (deterministic, no OCR) and renders a structured Markdown / JSON backlog preserving:
 
@@ -80,7 +80,7 @@ Duplicate it, replace `[PRODUCT NAME]` in the AI Readme, fill the backbone with 
 
 The full procedure covers:
 
-- **Workflow** (5 steps): gather input -> audit LLM-readiness -> run parser -> verify output -> push to PM tooling
+- **Workflow** (5 steps): gather input -> audit LLM-readiness -> run parser -> verify output -> convert to PM tooling
 - **Taxonomy** of sticky tags (`[STORY]`, `[V1]`, `[P1]`, `@DEV`, `[ACT_*]`, `[TASK_*]`, `Acceptance Criteria:`)
 - **Quality Checklist** (8 items) for declaring a board LLM-ready
 - **Map Structure Guardian** — active coach enforcing Patton + Cohn INVEST rules (not a passive reader)
