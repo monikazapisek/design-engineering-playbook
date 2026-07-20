@@ -31,3 +31,10 @@ story-map.md
 story-map.json
 *-audit-report.md
 output/
+
+# Publishing drafts (private — never commit articles, thread drafts, social copy)
+publish-*.md
+*-medium-article.md
+*-x-thread.md
+_drafts/
+drafts/
