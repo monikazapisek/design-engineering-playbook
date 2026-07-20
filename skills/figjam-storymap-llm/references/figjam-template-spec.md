@@ -39,6 +39,7 @@ Last Updated: 2026-07-20
 Version: 1.0
 Licence: MIT
 Skill: github.com/monikazapisekstudio/design-engineering-playbook/tree/main/skills/figjam-storymap-llm
+Get the skill (free, MIT): https://clawhub.ai/monikazapisekstudio/skills/figjam-storymap-llm
 
 If you use this template, credit appreciated:
 "Based on figjam-storymap-llm by Monika Zapisek"
@@ -57,7 +58,8 @@ independent and not affiliated with, endorsed by, or sponsored by Figma, Inc.
 | Last Updated | data ISO 8601 (`YYYY-MM-DD`) | Bump przy każdej zmianie — użytkownicy wiedzą czy mają świeżą wersję |
 | Version | semver (`1.0`, `1.1`, `2.0`) | Wersjonowanie template'u — ważne gdy template jest forkowany/duplikowany |
 | Licence | `MIT` (lub inna) | Wyraźne oświadczenie licencji — użytkownicy wiedzą czy mogą duplikować/modyfikować/sprzedawać |
-| Skill | pełny URL do folderu skilla w repo | Otwiera landing page folderu (renderowany README) — kieruje do parsera, pełnej procedury, source code |
+| Skill (GitHub) | pełny URL do folderu skilla w repo | Otwiera landing page folderu (renderowany README) — kieruje do parsera, pełnej procedury, source code |
+| Skill (ClawHub) | `https://clawhub.ai/monikazapisekstudio/skills/figjam-storymap-llm` | ClawHub to skills marketplace — jeden klik install dla Claude Code / Cursor / Copilot. Preferuj ten link w template (install path), GitHub jako source-of-truth w repo skilli |
 | Credit appreciated | miękka prośba o cytowanie | Etyczny ask (MIT nie wymaga), buduje authority loop — każdy screenshot z template = darmowa reklama |
 | Trademark disclaimer | FigJam/Figma = Figma, Inc. | Defense-in-depth — nominative fair use jest legalne, disclaimer to safety net |
 
@@ -145,38 +147,128 @@ AC:
 
 ## `[00_SECTION_AI_Readme]` — instrukcja dla agenta
 
-Wstaw na początku kanwy (najlepiej `x: 0, y: 0` względem roota) sekcję z instrukcją:
+Wstaw na początku kanwy (najlepiej `x: 0, y: 0` względem roota) sekcję z instrukcją. To jest brain agenta na kanwie — bez tego agent zgaduje, z tym agent działa deterministycznie. Wstaw jako **jeden TEXT node** (nie rozbijaj na osobne kartki — agent czyta to jako jeden dokument instrukcji).
 
 ```text
 ==================================================
 SYSTEM INSTRUCTIONS FOR AI AGENT (FIGJAM PARSER)
 ==================================================
 PURPOSE:
-Ten plik zawiera Story Map (Jeff Patton methodology) dla produktu [PRODUCT NAME].
+This file contains a Story Map (Jeff Patton methodology) for the product
+[PRODUCT NAME]. Parse it as a living specification, not as a screenshot.
+
+SKILL:
+This FigJam template is part of the figjam-storymap-llm skill by Monika Zapisek.
+The skill audits and parses FigJam User Story Maps into LLM-readable
+Markdown / JSON — eliminates the post-workshop transcription step and feeds
+Story Maps to coding agents (Cursor, Claude Code, Copilot) as living spec.
+What you get:
+- Python parser (Figma REST API -> Markdown / JSON)
+- Canonical FigJam template spec (this file's structure)
+- Verification prompt for LLM-readiness audits
+- Map Structure Guardian (active coach for Patton + Cohn INVEST rules)
+- Lean UX rules baked in (V1 tagged, V2 / V3 clean)
+Get the skill (free, MIT licence):
+https://clawhub.ai/monikazapisekstudio/skills/figjam-storymap-llm
+Install:
+- Claude Code / Cursor / Copilot: load the SKILL.md from the link above
+- CLI parser: clone the repo, run scripts/figjam_parser.py --file-key {KEY} --token $FIGMA_TOKEN
+- Audit mode: paste references/system-prompt.md as System Instructions, share board screenshot
 
 CANVAS STRUCTURE:
-- Sekcje ułożone pionowo (os Y): [01_BACKBONE_Activities] -> [02_BACKBONE_User_Tasks] -> [03_Release_1] -> [04_Release_2] -> [05_Release_3]
-- Chronologia kodowana w osi X (task 01 -> task 02 -> task 03)
+- Root: [STORY_MAP] — all stickies must be inside (otherwise unsectioned_nodes in JSON)
+- Sections vertical (Y axis): [TEMPLATE_META] -> [USER_SEGMENT_or_PERSONA] ->
+  [01_BACKBONE_Activities] -> [02_BACKBONE_User_Tasks] ->
+  [03_Release_1] -> [04_Release_2] -> [05_Release_3]
+- Chronology encoded in X axis (Task 01 -> Task 02 -> Task 03)
+- Each [STORY] mapped to [TASK] algorithmically: center_x of story falls
+  into the X range of the task (task.x to task.x + task.width)
 
 COLOR SEMANTICS:
-- #FFD9E2 = Activity (backbone L1)
-- #FFE5D2 = Task (backbone L2)
-- #E6F6C3 = Story V1 (MVP, z [P*] i @Owner)
-- #E5F3FE = Story V2 (Growth, czyste)
-- #F3EEFF = Story V3 (Scale/Vision, czyste)
+- #FFD9E2 = Activity (backbone L1, main user goal)
+- #FFE5D2 = Task (backbone L2, discrete user action, Patton term — NOT "Step")
+- #E6F6C3 = Story V1 (MVP, with [P*] and @Owner)
+- #E5F3FE = Story V2 (Growth, clean)
+- #F3EEFF = Story V3 (Scale / Vision, clean)
+
+TAXONOMY:
+Canonical sticky syntax:
+[STORY] [V1] [P1] User Story sentence @DEV
+AC:
+- Acceptance criterion 1
+- Acceptance criterion 2
+
+TAGS:
+[STORY] = User Story (release slice)
+[V1] / [V2] / [V3] = Release identifier
+[P1] / [P2] / [P3] = Priority — V1 ONLY
+@UX / @DEV / @PM / @QA = Owner role — V1 ONLY
+[ACT_*] = User Activity (backbone L1)
+[TASK_*] = User Task (backbone L2 — Patton term, NOT "Step")
+
+LEAN UX RULES (HARD):
+- V1 (MVP): full taxonomy — [P1]/[P2]/[P3] + @Owner + AC inline
+- V2 / V3: clean — zero [P*], zero @Owner
+- Reason: planning distant hypotheses is Big Upfront Design (Patton + Gothelf)
+- Exception: none — if you find [P*] or @Owner in V2/V3, FLAG as anti-pattern
 
 CONNECTOR RULES:
-- A -> B = relacja przyczynowo-skutkowa
-- Czerwona krawędź = blokada (A BLOCKS B)
+- Arrow A -> B = causal relation (A causes B)
+- Red edge = block (A BLOCKS B)
+- Edge label = relation type (REQUIRES, IF_FAIL, BLOCKS)
+- DO NOT connect linearly (step 1 -> step 2 -> step 3) — chronology is in X + [TASK_*] numbering
+- Use native Connectors only (they have connectorStart / connectorEnd in JSON)
+- Pen-tool lines = ignore (vectors without relation semantics)
 
-LEAN UX RULES:
-- V1: pełna taksonomia ([P1]/[P2]/[P3], @Owner, AC)
-- V2/V3: czyste kartki, zero [P*], zero @Owner
+AC RULES (HARD):
+- AC lives in the same sticky as [STORY], after the "AC:" marker
+- Separate AC sticky = anti-pattern (two disconnected JSON objects, agent guesses by x,y)
+- If you see a separate AC sticky, FLAG and propose merge with nearest Story
+
+PARSING METHODS (best to worst):
+
+1. GOLD STANDARD — Figma REST API (JSON)
+   URL: https://www.figma.com/developers/api
+   Endpoint: GET /v1/files/{file_key}
+   Auth: header X-Figma-Token
+   How it works: fetches full node tree (SECTION, STICKY, SHAPE_WITH_TEXT, CONNECTOR)
+   Pros: 100% deterministic, zero OCR, zero hallucinations, full metadata (x, y, section, connectorStart/End)
+   Cons: requires a valid FIGMA_TOKEN (Figma personal access token from settings)
+   Use when: production, large boards (>50 stickies), repeated parsing
+
+2. FALLBACK — PNG / screenshot (Vision LLM)
+   How it works: FigJam screenshot -> Claude 3.5 Sonnet / GPT-4o (Vision mode)
+   Pros: quick, no API token needed
+   Cons:
+   - OCR errors on >100 stickies (small text)
+   - Section names may be clipped by Copy as PNG (label renders on outer frame edge)
+   - No spatial metadata (x, y) — agent loses story->task mapping
+   - Dense layouts confuse the agent
+   Defense: add internal text headers inside each section (do not rely only on frame label)
+   Use when: quick audit, small boards (<50 stickies), no API token
+
+3. NOT RECOMMENDED — PDF export
+   Why NOT:
+   - PDF export converts text to vectors / text streams
+   - Spatial dependency extraction (x, y) most error-prone
+   - Section hierarchy often lost (PDF does not preserve FigJam hierarchy)
+   - Connectors become lines without relation semantics
+   Do not use. If you only have PDF, route through Figma REST API (JSON) instead.
 
 OUTPUT EXPECTED:
-Markdown backlog: Release -> Activity -> Task -> User Stories (z AC + Owner)
+Markdown backlog ordered: Release -> Activity -> Task -> User Stories (with AC + Owner)
+
+FLAG (active coach — do not silently fix, report with node IDs and smallest concrete fix):
+- Build-first voice in [ACT_*] / [TASK_*] ("Build X" instead of "User does X") — Patton anti-pattern
+- V2 / V3 with [P*] or @Owner — Big Upfront Design
+- Separate AC sticky — gets lost in JSON
+- Stickies outside [STORY_MAP] root — unsectioned_nodes, parser will not find them
+- Connector cycles within the same release — suspected duplicate Story or missing dependency
+- Connectors for linear flow — spaghetti payload, chronology is in X + [TASK_*] numbering
 ==================================================
 ```
+
+**Wskazówka:** W powyższym bloku podmień `[PRODUCT NAME]` na faktyczną nazwę swojego produktu przed publikacją template'u.
 
 ## Pre-publish checklist (10 min)
 
