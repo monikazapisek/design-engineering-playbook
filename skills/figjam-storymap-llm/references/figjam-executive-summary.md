@@ -1,7 +1,7 @@
 ---
 created: 2026-07-20
 updated: 2026-07-20
-version: 1.0
+version: 1.1
 description: Executive Summary of the figjam-storymap-llm skill for the FigJam canvas. Human-facing cover page that points to ClawHub (install) and GitHub (source).
 ---
 
@@ -10,23 +10,15 @@ description: Executive Summary of the figjam-storymap-llm skill for the FigJam c
 Insert at the top of the canvas (or as the first text block inside `[00_SECTION_AI_Readme]` visible to humans). This is the human-facing summary; the full System Instructions for the AI agent live in `figjam-template-spec.md` (section `[00_SECTION_AI_Readme]`).
 
 ```text
-==================================================
-FIGJAM STORY MAP — LLM-READY TEMPLATE
-Executive Summary
-==================================================
+System Instructions for AI Parser
 
 This template turns a FigJam Story Map (Jeff Patton methodology) into
 LLM-readable Markdown / JSON — no manual transcription, no OCR, no loss
 of spatial semantics. The parser reads the board via Figma REST API and
-renders a structured backlog. From there:
-- Obsidian: drop story-map.md into your vault (zero conversion)
-- Notion: Import -> Markdown (creates a page); or push via Notion MCP
-- Cursor / Claude Code / Copilot: paste as context (living spec)
-- Linear / Jira: convert story-map.json to CSV, or push via MCP
+renders a structured backlog.
 
---------------------------------------------------
-WHAT MAKES THIS BOARD LLM-READY
---------------------------------------------------
+What makes this board LLM-ready
+
 - [STORY_MAP] root wraps the whole canvas — zero unsectioned stickies
 - Sections tagged with deterministic prefixes ([03_SECTION_Release_1], ...)
 - Sticky taxonomy in square brackets: [STORY] [V1] [P1] sentence @DEV
@@ -36,20 +28,18 @@ WHAT MAKES THIS BOARD LLM-READY
 - Connectors only for branching / cross-release dependencies
 - [00_SECTION_AI_Readme] on canvas = the agent's operating manual
 
---------------------------------------------------
-HOW TO USE THIS BOARD
---------------------------------------------------
-1. Fill the backbone: [ACT_*] and [TASK_*] in user voice (not build voice)
-2. Slice releases: V1 walking skeleton, V2 / V3 hypotheses (clean)
-3. Write stories: [STORY] [V1] [P1] sentence @DEV + Acceptance Criteria
-4. Run the parser (CLI or agent) — get Markdown / JSON backlog
-5. Paste into a coding agent, or push to Notion / Linear / Jira
-   via MCP / CSV import
+How to use this board
 
---------------------------------------------------
-GET THE SKILL + PARSER
---------------------------------------------------
-ClawHub (one-click install for Claude Code / Cursor / Copilot):
+Fill the backbone: [ACT_*] and [TASK_*] in user voice (not build voice)
+Slice releases: V1 walking skeleton, V2 / V3 hypotheses (clean)
+Write stories: [STORY] [V1] [P1] sentence @DEV + Acceptance Criteria
+Run the parser (CLI or agent) — get Markdown / JSON backlog
+Paste into a coding agent
+and optionally push to Notion / Linear / Jira through MCP/CSV
+
+Get the skill + parser
+
+ClawHub (one-click install):
 https://clawhub.ai/monikazapisekstudio/skills/figjam-storymap-llm
 
 GitHub (source code, parser, full spec):
@@ -60,16 +50,28 @@ python scripts/figjam_parser.py --file-key {KEY} --token $FIGMA_TOKEN
 
 MIT licence — free to use, fork, and ship.
 
---------------------------------------------------
-RECOMMENDED READING
---------------------------------------------------
-- Jeff Patton — User Story Mapping (O'Reilly, 2014)
-- Mike Cohn — Better User Stories / User Stories Applied (2004)
-- Teresa Torres — Continuous Discovery Habits (2023)
-- Melissa Perri — Escaping the Build Trap (2018)
-- Jeff Gothelf & Josh Seiden — Lean UX (2013)
+Recommended Reading
+This Story Map template & skill integrates the following world-class
+agile methodologies:
 
-==================================================
+User Story Mapping (Jeff Patton): The core 2D structure (Horizontal
+Sequence / Vertical Slices) is based on Patton's technique for building
+shared understanding and visualizing the 'Walking Skeleton'.
+
+Better User Stories (Mike Cohn): The hierarchy of Activities, Tasks,
+and Stories, along with the 'Significant Objective' framing, follows
+Cohn's strategic approach to backlog refinement.
+
+Continuous Discovery Habits (Teresa Torres): The 'Problem Framing' and
+'Strategic Context' placeholders ensure that the map remains aligned
+with validated user opportunities and business outcomes.
+
+Escaping the Build Trap (Melissa Perri): The release strategy (V1-V3)
+is designed to prioritize validated value over simple output, ensuring
+the team solves real business problems.
+
+Lean UX (Jeff Gothelf & Josh Seiden): The inclusion of 'Core Value Proof'
+in V1 reflects the hypothesis-driven approach to product design.
 ```
 
 ## Where to put this on the canvas
