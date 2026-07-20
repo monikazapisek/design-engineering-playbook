@@ -68,6 +68,14 @@ Copy this folder into your `.agents/skills/` directory (or `.claude/skills/` for
 
 Paste the `references/system-prompt.md` content as System Instructions, then share a screenshot of your FigJam board (or JSON). The agent returns an LLM-readiness audit.
 
+### Option D — Start from the published FigJam template
+
+A ready-to-use FigJam Story Map template built to this spec is published on Figma Community:
+
+**[LLM Story Map — AI-readable User Story Map template](https://www.figma.com/community/file/{FIGMA_COMMUNITY_FILE_KEY})**
+
+Duplicate it, replace `[PRODUCT NAME]` in the AI Readme, fill the backbone with your Activities / Tasks, and the parser reads it out of the box.
+
 ## What's inside `SKILL.md`
 
 The full procedure covers:
