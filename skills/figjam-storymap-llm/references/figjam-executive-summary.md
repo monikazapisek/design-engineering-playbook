@@ -18,8 +18,11 @@ Executive Summary
 This template turns a FigJam Story Map (Jeff Patton methodology) into
 LLM-readable Markdown / JSON — no manual transcription, no OCR, no loss
 of spatial semantics. The parser reads the board via Figma REST API and
-renders a structured backlog for Notion / Linear / Jira, or as living
-spec for Cursor / Claude Code / Copilot.
+renders a structured backlog. From there:
+- Obsidian: drop story-map.md into your vault (zero conversion)
+- Notion: Import -> Markdown (creates a page); or paste rows into a DB
+- Cursor / Claude Code / Copilot: paste as context (living spec)
+- Linear / Jira: convert story-map.json to CSV (converter not bundled)
 
 --------------------------------------------------
 WHAT MAKES THIS BOARD LLM-READY
@@ -40,7 +43,8 @@ HOW TO USE THIS BOARD
 2. Slice releases: V1 walking skeleton, V2 / V3 hypotheses (clean)
 3. Write stories: [STORY] [V1] [P1] sentence @DEV + Acceptance Criteria
 4. Run the parser (CLI or agent) — get Markdown / JSON backlog
-5. Push to Notion / Linear / Jira, or paste into a coding agent
+5. Drop into Obsidian / Notion / coding agent, or convert JSON to CSV
+   for Linear / Jira
 
 --------------------------------------------------
 GET THE SKILL + PARSER
