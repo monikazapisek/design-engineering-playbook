@@ -1,15 +1,15 @@
 ---
-name: roi-content-audit
+name: ui-roi-audit
 description: |
-  Audit one web page against source-cited conversion and ROI criteria, rank fixes by expected return, and estimate a conservative 12-month ROI when data exists. Use for ROI or conversion audits of landing, home, category, product, form, or checkout pages, including “why does this page not convert?” and “what should we fix first?”. Do not use to write copy or perform SEO, brand-voice, or WCAG compliance audits.
+  Audit web pages and task-driven interfaces against source-cited conversion, usability, and ROI criteria, rank fixes by expected return, and estimate a conservative 12-month ROI when data exists. Use for ROI or conversion audits of landing, home, category, product, form, or checkout pages, including “why does this page not convert?” and “what should we fix first?”. Do not use to write copy or perform SEO, brand-voice, or WCAG compliance audits.
 license: MIT
 metadata:
   author: Monika Zapisek
   project: Design Engineering Playbook
-  version: "1.1"
+  version: "2.0"
 ---
 
-# ROI Content Audit
+# UI ROI Audit
 
 Judge one page by whether it moves a visitor toward the action the business pays for, then rank the
 fixes by likely return. Taste is out of scope. A sourced finding needs a criterion ID; anything else

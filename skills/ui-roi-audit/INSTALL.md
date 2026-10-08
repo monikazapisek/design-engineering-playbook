@@ -4,15 +4,15 @@ updated: 2026-10-08
 version: 1.0
 author: Monika Zapisek (Product Designer / UX Team)
 status: accepted
-description: Installation instructions for roi-content-audit in Claude Code, Claude web chat, and Cowork.
+description: Installation instructions for ui-roi-audit in Claude Code, Claude web chat, and Cowork.
 project: design-engineering-playbook
 source-of-truth: true
 url:
 ---
 
-# Install roi-content-audit
+# Install ui-roi-audit
 
-Install the complete `roi-content-audit` folder. Keep its internal paths unchanged so `SKILL.md`
+Install the complete `ui-roi-audit` folder. Keep its internal paths unchanged so `SKILL.md`
 can load `references/`, `examples/`, `ATTRIBUTION.md`, and `EVIDENCE.md`.
 
 ## Claude Code CLI
@@ -20,7 +20,7 @@ can load `references/`, `examples/`, `ATTRIBUTION.md`, and `EVIDENCE.md`.
 Copy the folder to your personal Claude Code skills directory:
 
 ```text
-~/.claude/skills/roi-content-audit/
+~/.claude/skills/ui-roi-audit/
 ```
 
 For a project-only installation, place it under the project's `.claude/skills/` directory instead.
@@ -28,7 +28,7 @@ Start a new session after copying, then ask for an ROI or conversion audit of on
 
 ## Claude web or chat
 
-1. Create a ZIP whose top-level folder is `roi-content-audit` and includes `SKILL.md`.
+1. Create a ZIP whose top-level folder is `ui-roi-audit` and includes `SKILL.md`.
 2. In Claude, enable code execution and file creation in Settings if required by your plan.
 3. Open **Customize → Skills**, choose **+ → Create skill → Upload a skill**, and upload the ZIP.
 4. Enable the skill in the skills list.

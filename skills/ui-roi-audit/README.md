@@ -1,7 +1,9 @@
-# roi-content-audit
+# UI ROI Audit
 
-Audit a web page's content against conversion and ROI criteria, and rank the fixes by expected
-return. Every finding cites its source.
+Slug: `ui-roi-audit` (formerly `roi-content-audit`).
+
+Audit web pages and task-driven interfaces against conversion, usability, and ROI criteria, and
+rank the fixes by expected return. Every finding cites its source.
 
 ## What it does
 
