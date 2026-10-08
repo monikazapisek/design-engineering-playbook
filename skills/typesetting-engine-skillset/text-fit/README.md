@@ -1,8 +1,8 @@
 # Text Fit
 
-**Check whether text fits its container — and still fits when it changes.**
+**Check whether text in a user interface fits its container — and still fits when it changes.**
 
-Compares how much text sibling components carry, turns that into a character budget, finds text that is cut off with no way to read the rest, and checks whether the layout holds with longer copy, a translation or larger text.
+Compares how much text sibling UI components carry, turns that into a character budget, finds text that is cut off with no way to read the rest, and checks whether the layout holds with longer copy, a translation or larger text.
 
 ## What it does
 

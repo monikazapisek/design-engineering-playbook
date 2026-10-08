@@ -1,6 +1,6 @@
 ---
 name: text-fit
-description: Use when checking whether text fits its container and stays readable when it changes — uneven text length across sibling components (cards, list rows), truncated text with no way to read the rest, and layouts that break with longer copy, a translation or larger text. Reports line counts and a character budget; it does not rewrite the copy.
+description: Use when checking whether text in a user interface fits its container and stays readable when it changes — uneven text length across sibling components (cards, list rows), truncated text with no way to read the rest, and layouts that break with longer copy, a translation or larger text. Reports line counts and a character budget; it does not rewrite the copy.
 triggers:
   use_when:
     - user asks why cards or list rows look uneven because their texts have different lengths

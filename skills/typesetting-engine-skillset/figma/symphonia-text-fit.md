@@ -1,6 +1,6 @@
 ---
 name: symphonia-text-fit
-description: Use whenever Figma cards, list rows, or components need text-fit, line-count, character-budget, truncation, clipping, localisation, or larger-text resilience checked. Compare matched sibling layers, label line counts as estimates, verify that full text remains reachable, duplicate before stress testing, never rewrite copy, and ask before every write.
+description: Use whenever user interface cards, list rows, or components in Figma need text-fit, line-count, character-budget, truncation, clipping, localisation, or larger-text resilience checked. Compare matched sibling layers, label line counts as estimates, verify that full text remains reachable, duplicate before stress testing, never rewrite copy, and ask before every write.
 ---
 
 # Symphonia Text Fit

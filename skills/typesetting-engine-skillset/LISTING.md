@@ -228,13 +228,13 @@ symphonia-text-fit
 **Tagline**
 
 ```text
-Stress-test selected components with longer copy before text clips, truncates, or breaks the layout.
+Stress-test selected UI components with longer copy before text clips, truncates, or breaks the layout.
 ```
 
 **Description**
 
 ```text
-Inspect text resizing, visible height, estimated line count, truncation, and parent constraints. The skill proposes realistic stress-copy cases without shrinking the font as a default fix, then asks before duplicating frames, replacing content, or changing layout values.
+Inspect text in user interface components: resizing, visible height, estimated line count, truncation, and parent constraints. The skill proposes realistic stress-copy cases without shrinking the font as a default fix, then asks before duplicating frames, replacing content, or changing layout values.
 ```
 
 **Category:** Critique
