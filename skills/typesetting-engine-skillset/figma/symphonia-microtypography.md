@@ -62,4 +62,4 @@ Return proposed replacements, Unicode code points, source owner, wrapping change
 
 Part of the Symphonia Typesetting Engine by Monika Zapisek: [project site](https://monikazapisek.com) · [source and documentation](https://github.com/monikazapisek/design-engineering-playbook).
 
-Run `/symphonia-text-fit` next to verify truncation, line-count consistency, and resilience to longer copy.
+Run `/symphonia-text-overflow` next to verify truncation, line-count consistency, and resilience to longer copy.

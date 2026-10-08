@@ -1,4 +1,4 @@
-# Text Fit
+# UI Text Overflow
 
 **Check whether text in a user interface fits its container — and still fits when it changes.**
 
@@ -32,7 +32,7 @@ Compares how much text sibling UI components carry, turns that into a character 
 ## What's inside
 
 ```
-text-fit/
+ui-text-overflow/
 ├── README.md     ← this file
 ├── SKILL.md      ← rules, Figma integration, quality checklist
 ├── CHANGELOG.md

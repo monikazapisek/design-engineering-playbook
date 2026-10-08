@@ -14,11 +14,11 @@ Each skill does one job and hands off to its neighbors rather than duplicating l
 | [`vertical-spacing`](./vertical-spacing/) | Margin/padding/Auto Layout gap against a grid base, vertical-trim optical correction, paragraph/list rhythm, Figma margin-collapse guard. | Yes — reads/writes `FrameNode` Auto Layout properties |
 | [`type-scale-generator`](./type-scale-generator/) | Generates a font-size scale from a base size and ratio (8 named musical/geometric ratios, Fibonacci, classic Garamond steps), rounded to avoid subpixel rendering, with line-height and tracking for each step. | Yes — base from the selected text; creates variables, text styles bound to them, and a specimen |
 | [`glyph-fidelity`](./glyph-fidelity/) | All-caps tracking formula, ligature-collision guard under negative tracking, inline-acronym subrange treatment. Holds the all-caps tracking formula that `text-typesetting` uses. | Yes — reads `textCase`, writes range tracking and size; ligature changes are reported, since Figma has no setter for them |
-| [`text-fit`](./text-fit/) | Text against its container: line counts across sibling components, a character budget, truncation with reachable full text, resilience to longer copy, translation and larger text. Draft. | Yes — reads `textAutoResize`, `textTruncation`, `maxLines` |
+| [`ui-text-overflow`](./ui-text-overflow/) | Text against its container: line counts across sibling components, a character budget, truncation with reachable full text, resilience to longer copy, translation and larger text. Draft. | Yes — reads `textAutoResize`, `textTruncation`, `maxLines` |
 
 ## How they hand off to each other
 
-For code-capable agents, a typical full pass is `type-scale-generator` → `line-length-optimizer` → `text-typesetting` (+ `glyph-fidelity` for all-caps) → `vertical-spacing` → `microtypography` → `text-fit`.
+For code-capable agents, a typical full pass is `type-scale-generator` → `line-length-optimizer` → `text-typesetting` (+ `glyph-fidelity` for all-caps) → `vertical-spacing` → `microtypography` → `ui-text-overflow`.
 
 Figma runs only the first skill named in a prompt. The seven files in [`figma/`](./figma/) are therefore standalone: each repeats the neighbouring rules it needs and ends by naming the next slash command. Run them one at a time:
 
@@ -28,7 +28,7 @@ Figma runs only the first skill named in a prompt. The seven files in [`figma/`]
 4. `/symphonia-glyph-fidelity` when the selection contains all-caps, small caps, acronyms, tight ligatures, or suspected fallback glyphs
 5. `/symphonia-vertical-spacing`
 6. `/symphonia-microtypography`
-7. `/symphonia-text-fit`
+7. `/symphonia-text-overflow`
 
 Every Figma skill follows the same boundary: read → report → ask only for missing consequential information → ask before every write. A value owned by a style or variable is reported at that owner and is not silently overridden on one node.
 

@@ -217,12 +217,12 @@ Fix the characters without flattening the text styles.
 
 ---
 
-## symphonia-text-fit
+## symphonia-text-overflow
 
 **Name**
 
 ```text
-symphonia-text-fit
+symphonia-text-overflow
 ```
 
 **Tagline**
