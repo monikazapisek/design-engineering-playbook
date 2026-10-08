@@ -1,7 +1,7 @@
 ---
 created: 2026-10-08
 updated: 2026-10-08
-version: 1.0
+version: 2.0
 author: Monika Zapisek (Product Designer / UX Team)
 status: accepted
 description: Installation instructions for ui-roi-audit in Claude Code, Claude web chat, and Cowork.

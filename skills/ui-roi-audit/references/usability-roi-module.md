@@ -1,7 +1,7 @@
-# Usability ROI module (optional)
+# Usability ROI module
 
-Load only when the user asks for a usability review, or when the audited page is task-driven
-software instead of a sales page. Keep its findings in a separate table from the content findings.
+Load for every task-driven interface, or when the user asks for usability within a conversion-page
+audit. When both modules apply, keep usability findings separate from conversion-content findings.
 
 Citation keys: **M04** = Marcus 2004 (AM+A white paper). **LN08** = Loveday & Niehaus 2008.
 Full references in `../ATTRIBUTION.md`.

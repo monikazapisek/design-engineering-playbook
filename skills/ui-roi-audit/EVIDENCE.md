@@ -1,7 +1,7 @@
 # Evidence — ui-roi-audit
 
 **Date:** 2026-10-08  
-**Version tested:** 1.1  
+**Version tested:** 2.0 (workflow verified as 1.1; naming and routing revised in 2.0)  
 **Status:** publication-ready; behavioral and source-verification gates passed.
 
 ## Test inventory
@@ -10,7 +10,7 @@
 |---|---|
 | Product page, no analytics | Pass — `examples/sample-audit.md` |
 | With-skill vs no-skill baseline, landing page with ROI data | With-skill wins 4, baseline wins 0, one tie |
-| Trigger routing: 5 positive and 5 negative requests | 10/10 routed as intended after description revision |
+| Trigger routing: 5 positive and 5 negative requests | 10/10 routed as intended after v2 naming and description revision |
 | Task-driven interface with usability module and cost avoided | Pass |
 | Checkout page, no analytics | Pass |
 | Criterion-level source verification | Pass — all 54 mappings checked; six narrowed or corrected |
@@ -55,13 +55,13 @@ did not make its uplift assumption a benchmark and chose the more conservative r
 
 The skill is measurably better than baseline at producing an auditable, bounded report without
 weaker business reasoning. The run exposed one gap: a landing page whose conversion control is a
-form loaded only landing-page criteria, leaving form defects as uncited observations. Version 1.1
+form loaded only landing-page criteria, leaving form defects as uncited observations. The workflow
 now loads the secondary form or checkout section when that control is embedded in another page.
 
 ## Trigger routing test
 
-This was a description-level routing test: each request was checked against the discovery
-description and `triggers` boundaries after revision.
+This was a description-level routing test: each request was checked against the v2 discovery
+description and the explicit scope boundaries in `SKILL.md`.
 
 ### Should invoke
 
@@ -71,7 +71,7 @@ description and `triggers` boundaries after revision.
 | “Why doesn’t this product page convert?” | Invoke | Explicit conversion diagnosis of one supported page type |
 | “Rank the checkout problems by business impact.” | Invoke | Supported page type and impact ranking |
 | “Czy redesign formularza się opłaci? Mam ruch, CR i koszt wdrożenia.” | Invoke | Form audit with ROI inputs |
-| “Audit this home page against our lead-generation goal.” | Invoke | One page and observable business goal |
+| “Audit this support dashboard and estimate the ROI of reducing task time.” | Invoke | Task-driven interface with measurable cost impact |
 
 ### Should not invoke
 
@@ -83,8 +83,9 @@ description and `triggers` boundaries after revision.
 | “Oceń tone of voice marki na stronie.” | Do not invoke | Brand-voice review |
 | “Zagwarantuj, ile przychodu da ten redesign.” | Do not invoke | Forecast commitment is outside scope |
 
-**Result:** 5/5 positive and 5/5 negative cases route correctly. The frontmatter description now
-names both supported intents and exclusions; the longer trigger list remains as reinforcement.
+**Result:** 5/5 positive and 5/5 negative cases route correctly. The frontmatter description names
+web pages, task-driven interfaces, conversion, usability, and ROI; exclusions remain explicit in
+the body.
 
 ## Usability-module run
 

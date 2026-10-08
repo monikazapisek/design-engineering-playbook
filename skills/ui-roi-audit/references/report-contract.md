@@ -4,7 +4,8 @@ Load this reference in the final reporting step.
 
 ## Output contract
 
-1. **Audit frame** — page, type, goal, audience, traffic source, data, viewport.
+1. **Audit frame** — page, screen, or task flow; type; goal; users; traffic source when relevant;
+   data; viewport.
 2. **Verdict** — two sentences: biggest conversion cost and first fix.
 3. **Findings table** — fewer than 15 rows; group minor issues.
 
@@ -34,9 +35,9 @@ Load this reference in the final reporting step.
 
 | Situation | Action |
 |---|---|
-| No conversion goal | Stop and ask for the one action that counts. |
-| Whole-site request | Ask for funnel drop-off, then audit the page with the largest loss. |
-| No traffic or conversion data | Audit qualitatively and name the missing inputs. |
+| No success goal | Stop and ask for the one conversion or task outcome that counts. |
+| Whole-site or whole-product request | Ask for funnel or task data, then audit the page or flow with the largest loss. |
+| No value data | Audit qualitatively and name the missing revenue or cost inputs. |
 | Guaranteed uplift requested | Decline; give a range and assumptions. |
 | Brand or legal constraint conflicts with a criterion | Record the constraint with the finding. |
 | Copy rewrite requested | Finish the audit, then hand off to a content-design workflow. |

@@ -1,17 +1,17 @@
-# UI ROI Audit
+# ui-roi-audit
 
-Slug: `ui-roi-audit` (formerly `roi-content-audit`).
+Formerly `roi-content-audit`.
 
-Audit web pages and task-driven interfaces against conversion, usability, and ROI criteria, and
-rank the fixes by expected return. Every finding cites its source.
+Audit web pages and task-driven interfaces against source-cited conversion, usability, and ROI
+criteria, then rank fixes by expected return.
 
 ## What it does
 
-- Scores a landing page, home page, category page, product page, form, or checkout against
-  checkable criteria
+- Scores landing, home, category, product, form, and checkout pages against conversion criteria
+- Scores task-driven interfaces against usability and cost-impact criteria
 - Rates each gap by exposure, severity, and effort
 - Estimates a conservative twelve-month ROI for the top fixes when traffic and conversion data exist
-- Optionally extends the audit to interface usability
+- Converts interface improvements into revenue gained or cost avoided when data exists
 - Ends every report with full source references
 
 ## What it does not do
@@ -41,6 +41,7 @@ rank the fixes by expected return. Every finding cites its source.
 - "Run an ROI audit on this landing page. Goal: demo requests. 30k visits a month, 1.2% conversion."
 - "Why doesn't this product page convert? Here is a screenshot."
 - "Audit our checkout and tell me what to fix first. Include usability."
+- "Audit this support workflow and estimate the ROI of reducing task time and errors."
 
 ## Sources
 
@@ -50,7 +51,7 @@ does not reproduce the sources. See `ATTRIBUTION.md`.
 
 ## Status
 
-Version 1.1. Tested on a product page, landing page with ROI data, checkout, and a task-driven
+Version 2.0. Tested on a product page, landing page with ROI data, checkout, and a task-driven
 interface. It outperformed a no-skill baseline on four of five evaluation dimensions. All 54
 criterion-to-chapter mappings and the selected white-paper citations were source-verified; see
 `EVIDENCE.md`.

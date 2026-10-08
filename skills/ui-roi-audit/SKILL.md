@@ -1,7 +1,6 @@
 ---
 name: ui-roi-audit
-description: |
-  Audit web pages and task-driven interfaces against source-cited conversion, usability, and ROI criteria, rank fixes by expected return, and estimate a conservative 12-month ROI when data exists. Use for ROI or conversion audits of landing, home, category, product, form, or checkout pages, including “why does this page not convert?” and “what should we fix first?”. Do not use to write copy or perform SEO, brand-voice, or WCAG compliance audits.
+description: Audit web pages and task-driven interfaces against source-cited conversion, usability, and ROI criteria.
 license: MIT
 metadata:
   author: Monika Zapisek
@@ -11,15 +10,18 @@ metadata:
 
 # UI ROI Audit
 
-Judge one page by whether it moves a visitor toward the action the business pays for, then rank the
-fixes by likely return. Taste is out of scope. A sourced finding needs a criterion ID; anything else
-must be labelled as the auditor's own observation and kept out of the ranking.
+Judge a web page or task-driven interface by whether it moves a person toward the conversion or task
+the organization values, then rank fixes by likely return. Taste is out of scope. A sourced finding
+needs a criterion ID; anything else must be labelled as the auditor's own observation and kept out
+of the ranking.
 
 ## When to use
 
-Use for “ROI audit”, “conversion audit”, “audyt ROI”, “audyt konwersji”, “why does this page not
-convert?”, prioritizing page fixes by business impact, or justifying a page investment. Supported
-types: landing, home, category, product, form, and checkout.
+Use for “UI ROI audit”, “interface audit”, “usability ROI”, “ROI audit”, “conversion audit”, “audyt
+ROI”, “audyt interfejsu”, “why does this page not convert?”, prioritizing interface fixes by
+business impact, or justifying a design investment. Supported conversion pages: landing, home,
+category, product, form, and checkout. Supported task-driven scope: one interface screen or task
+flow with an observable success condition.
 
 Do not use for copywriting, SEO, brand voice, WCAG compliance, or a revenue commitment. A browser
 or screenshot helps but is optional; the workflow has no external dependency.
@@ -28,11 +30,11 @@ or screenshot helps but is optional; the workflow has no external dependency.
 
 | Situation | Load |
 |---|---|
-| Page type is known | Only that section of `references/page-type-criteria.md` |
+| A conversion-page type is known | Only that section of `references/page-type-criteria.md` |
 | The conversion control is a form or checkout embedded in another page | Also load the matching form or checkout section |
-| Every audit | `references/content-and-trust-criteria.md` |
+| Auditing a conversion page or content that sells an action | `references/content-and-trust-criteria.md` |
 | Estimating value or answering “is it worth it?” | `references/roi-model.md` |
-| User requests usability, or the page is task-driven software | `references/usability-roi-module.md` |
+| Auditing a task-driven interface, or the user requests usability | `references/usability-roi-module.md` |
 | Before using a statistic or benchmark | `references/source-limitations.md` |
 | Preparing the final report | `references/report-contract.md` |
 | A format example is needed | `examples/sample-audit.md` |
@@ -49,9 +51,9 @@ Bibliography and reuse notes: `ATTRIBUTION.md`.
 
 ## Required inputs
 
-1. Page: URL, screenshot, or pasted content; one page per run.
-2. Page type: landing, home, category, detail/product, form, or checkout.
-3. One conversion goal: purchase, lead form, signup, call, or another observable action.
+1. Target: URL, screenshot, pasted content, or task flow; one page, screen, or flow per run.
+2. Type: landing, home, category, detail/product, form, checkout, or task-driven interface.
+3. One success goal: purchase, lead, signup, call, completed task, time saved, or cost avoided.
 4. Traffic source for a landing page: the ad or link that sends visitors there.
 5. If available: monthly visits, conversion rate, average order/lead value, implementation cost,
    and funnel drop-off.
@@ -63,22 +65,24 @@ numbers.
 
 ### 1. Frame
 
-State page, type, goal, audience, traffic source, data, and observed viewport. If a page mixes
-types, name the primary type and any conversion-control type you will score.
+State target, type, goal, audience or users, traffic source when relevant, available data, and
+observed viewport. If a target mixes types, name the primary type and any secondary criteria set.
 
 **Output:** audit frame.
 
 ### 2. Inventory
 
-Record the page in reading order: headline, value proposition, primary action, supporting content,
-images, price, trust signals, navigation, forms, and observable states. Mark what is in the first
-screen. Mark unavailable states as *not observed*.
+Record the page or task flow in order: content, primary actions, navigation, inputs, feedback,
+errors, recovery, and other observable states. For conversion pages, also capture value proposition,
+images, price, and trust signals. Mark unavailable states as *not observed*.
 
 **Output:** content inventory with viewport and observation limits.
 
 ### 3. Score content and page criteria
 
-Load the relevant page-type section(s) and all cross-cutting criteria. Score each applicable item:
+For conversion pages, load the relevant page-type section(s) and cross-cutting content criteria.
+For a purely task-driven interface, skip this step and use the usability module in Step 4. Score
+each applicable item:
 
 | Score | Meaning |
 |---|---|
@@ -91,8 +95,8 @@ Load the relevant page-type section(s) and all cross-cutting criteria. Score eac
 
 ### 4. Score usability when applicable
 
-For a requested usability review or task-driven interface, load the usability module and keep its
-findings separate from content findings.
+For a task-driven interface or requested usability review, load the usability module. When both
+modules apply, keep usability findings separate from conversion-content findings.
 
 **Output:** separate usability table, or a note that the module was not run.
 
@@ -101,12 +105,13 @@ findings separate from content findings.
 Rate each Partial and Fail High / Medium / Low on:
 
 - **Exposure:** how much traffic meets it; first screen > later content > secondary state.
-- **Severity:** how directly it blocks the conversion goal.
+- **Severity:** how directly it blocks the conversion or task-success goal.
 - **Effort:** work needed to fix it.
 
-Rank high-exposure, high-severity, low-effort gaps first. If the user supplied the required numbers,
-load the ROI model and calculate a conservative 12-month range for the top fixes. Otherwise state
-“no data — qualitative” and name the missing inputs.
+Rank high-exposure, high-severity, low-effort gaps first. For conversion pages, calculate value from
+traffic, conversion rate, and order or lead value. For task interfaces, calculate cost avoided from
+time, support, training, or rework using the usability module. Otherwise state “no data —
+qualitative” and name the missing inputs.
 
 **Output:** ranked top three with ROI range or qualitative status.
 
@@ -122,7 +127,7 @@ and final checklist.
 - Treating a general best practice as if either source stated it.
 - Scoring an unobserved error, mobile, or post-submit state as a failure.
 - Turning a scenario assumption into a benchmark or guaranteed uplift.
-- Auditing an entire site when funnel data can identify the page with the largest loss.
+- Auditing an entire site or product when funnel or task data can identify the largest loss.
 - Drafting replacement copy inside the audit; hand that work to a content-design workflow.
 
 ## Related skills
