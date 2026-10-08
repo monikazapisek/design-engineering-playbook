@@ -62,7 +62,7 @@ Start from selected text or a stated base size. The skill proposes a rounded sca
 **Cover text**
 
 ```text
-Build the type scale before creating the styles.
+Build a type scale before creating the text styles.
 ```
 
 ---
@@ -92,7 +92,7 @@ Read styled ranges, text styles, and variables before recommending a change. The
 **Cover text**
 
 ```text
-See what owns each typography value before changing it.
+Check line-height, tracking and number styles.
 ```
 
 ---
@@ -122,7 +122,7 @@ Audit effective content width, wrapping mode, estimated characters per line, and
 **Cover text**
 
 ```text
-Find the constraint behind an unreadable text measure.
+Check how many characters fit on each line.
 ```
 
 ---
@@ -152,7 +152,7 @@ Inspect the selected section as a hierarchy, not as isolated gaps. The skill rea
 **Cover text**
 
 ```text
-Check the rhythm and the hierarchy behind each gap.
+Check gaps and padding against your spacing grid.
 ```
 
 ---
@@ -182,7 +182,7 @@ Audit selected text for all-caps spacing, false small caps, fallback glyphs, and
 **Cover text**
 
 ```text
-Check the glyphs and spacing that survive at display size.
+Check caps tracking, ligatures and missing glyphs.
 ```
 
 ---
@@ -212,7 +212,7 @@ Review selected prose without rewriting it. The skill reports each Unicode repla
 **Cover text**
 
 ```text
-Fix the characters without flattening the text styles.
+Fix dashes, quotes and orphans in Polish and English.
 ```
 
 ---
