@@ -4,6 +4,11 @@ This skill is built on two published sources. The structure, wording, criterion 
 procedure, and worked example are original work licensed under MIT (see `LICENSE`). The underlying
 ideas and reported findings belong to the authors below and are credited to them throughout.
 
+## Author and project
+
+- **Author:** [Monika Zapisek](https://monikazapisek.com)
+- **Project:** [Symphonia Score](https://symphoniascore.com)
+
 ## Bibliography
 
 **Loveday, L., & Niehaus, S. (2008).** *Web Design for ROI: Turning Browsers into Buyers &

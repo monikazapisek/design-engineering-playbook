@@ -53,6 +53,11 @@ interface. It outperformed a no-skill baseline on four of five evaluation dimens
 criterion-to-chapter mappings and the selected white-paper citations were source-verified; see
 `EVIDENCE.md`.
 
+## Author and project
+
+- **Author:** [Monika Zapisek](https://monikazapisek.com)
+- **Project:** [Symphonia Score](https://symphoniascore.com)
+
 ## License
 
 MIT for the skill's own text and structure. The sources remain under their authors' copyright.
