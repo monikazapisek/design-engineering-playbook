@@ -120,6 +120,20 @@ Three pairs per category. Study the shape, not the words.
 | ✅ Natural | *"Claim offer"* |
 | Why | The bad one works only next to the heading. The good one survives being read alone by a screen reader. |
 
+### Section and page descriptions (documentation, design system files)
+
+| | |
+|---|---|
+| ❌ Pastiche | *"How to adjust colors, radius, fonts, and icons so the library matches your project instead of ours."* |
+| ✅ Natural | *"Adjust colors, radius, fonts, and icons to match your project."* |
+| Why | "Instead of ours" is a manufactured contrast nobody says aloud. The verb and the four nouns were already the whole message. |
+
+| | |
+|---|---|
+| ❌ Pastiche | *"Change a token's value once; every component bound to it updates automatically."* — written for a section that was actually about adapting tokens to the customer's brand. |
+| ✅ Natural | Ask first: *"What does this section cover?"* Then write. |
+| Why | The string passes every style check and is still wrong — it describes content the author imagined, not content that exists. Scope errors survive style filters. |
+
 ### Login and returning users
 
 | | |

@@ -3,6 +3,10 @@
 All notable changes to this skill are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and semantic versioning.
 
+## v1.4.0 — 2026-10-09
+
+- **Added — Rule 2, short last line:** a last line under a third of the longest line is flagged as an orphan even when it holds two or three words; the one-third threshold is a working value of this skillset, not a published rule. Fix: `text-wrap: balance` for blocks of up to three lines, `pretty` plus the NBSP guard for longer ones. Found in the Symphonia Score home page audit: `pretty` let "…the handoff / to code." through, because browsers guard against a one-word last line only.
+
 ## v1.3.0 — 2026-10-08
 
 - **Added — Rule 1d, functional Unicode spacing:** defines narrow no-break, figure, thin and hair spaces, plus the non-breaking hyphen, with explicit use and non-use cases.

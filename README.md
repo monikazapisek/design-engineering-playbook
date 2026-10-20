@@ -1,6 +1,6 @@
 # Design Engineering Playbook
 
-AI-assisted workflow artefacts for product designers working in agile and lean environments. Agents, skills, and design engineering tools built for AI-native workflows across the full product lifecycle.
+A set of tools for product designers closing the gap between design and code. Agents, skills, and design engineering tools built for AI-native workflows across the full product lifecycle.
 
 ## Installation
 

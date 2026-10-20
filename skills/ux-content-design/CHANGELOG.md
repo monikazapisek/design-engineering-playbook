@@ -3,6 +3,34 @@
 All notable changes to this skill are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and semantic versioning.
 
+## v1.2.0 — 2026-08-04
+
+### Procedure enforcement: skill as contract, not context
+
+Found in live use (Symphonia Score Foundations file, Documentation page descriptions): the model
+loaded the skill, then drafted from its default register anyway — no brief, no variants, no
+stress-test — and ran `golden-standards.md` only as an after-the-fact filter on strings that
+already looked suspicious. Result: pastiche tells shipped ("instead of ours", payoff clauses),
+and one entire section was written to imagined content — the Theming descriptions covered the
+product's built-in modes when the section was actually about adapting tokens to the customer's
+own project. The scope error passed every style check.
+
+- **`SKILL.md`**: new output-shape gate at the top — no string leaves the skill without its
+  Phase 1 brief visible in the response; output without a brief is invalid and gets regenerated,
+  not patched. Enforcement moved from admonition to format, because format is what models
+  actually hold.
+- **`SKILL.md` Failure handling**: new row banning shortcut negotiation — offering a "quick
+  version" or asking whether to skip phases is silent scope-cutting; the phases scale down for
+  trivial tasks but are never absent.
+- **`SKILL.md` Inputs, item 1**: hardened — if you cannot state in one sentence what the surface
+  actually contains (not *probably* contains), stop and ask. Copy for imagined content is the
+  most expensive failure: it passes every style check and is still wrong.
+- **`SKILL.md` Anti-patterns**: added "Filter, not method" — drafting from habit and sieving
+  afterward; the tells regenerate faster than they can be filtered.
+- **`references/golden-standards.md`**: new golden-pair category "Section and page descriptions"
+  with two pairs promoted from the live session — the manufactured-contrast pair and the
+  scope-error pair.
+
 ## v1.1.0 — 2026-08-04
 
 ### Register: product copy, not marketing copy

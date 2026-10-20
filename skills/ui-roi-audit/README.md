@@ -35,6 +35,7 @@ criteria, then rank fixes by expected return.
 | `EVIDENCE.md` | What was tested and what was not |
 | `ATTRIBUTION.md` | Bibliography and reuse notes |
 | `INSTALL.md` | Installation for Claude Code, Claude web/chat, and Cowork |
+| `figma/ui-roi-audit.md` | Single-file version for the Figma agent: audits a selected frame, report only (untested in the agent) |
 
 ## Example prompts
 

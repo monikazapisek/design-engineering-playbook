@@ -24,9 +24,9 @@ compatibility: |
 metadata:
   author: Monika Zapisek
   project: Design Engineering Playbook
-  version: "1.3.0"
+  version: "1.4.0"
   created: 2026-07-08
-  updated: 2026-10-08
+  updated: 2026-10-09
   status: accepted
 ---
 
@@ -139,6 +139,10 @@ Rules and fallbacks:
 - **Orphan** (in typesetting terms as used here: a single word, or a very short line, left alone at the *end* of a paragraph, wrapping to its own line): reflow by tightening wording (rare) or, more practically, by inserting an NBSP between the last two words of the paragraph so they can't be split — the standard cheap fix.
 - **Widow** (a short line — often one word — left alone at the *top* of a new column/page after a page break): flag it; fixing it requires knowing the actual line breaks at render time, which this skill can't see from raw text. Note it in the output as "widow risk — verify after layout" rather than guessing a fix.
 - Prefer the same NBSP-between-last-two-words technique proactively at the end of every paragraph as a low-cost orphan guard, not just when one is spotted.
+- **Short last line.** A last line of two or three short words under a long line ("…and the handoff / to code.") reads as an orphan too, and the NBSP guard doesn't prevent it. Flag a last line shorter than one third of the paragraph's longest line — a working threshold of this skillset; no published source gives a number. Fix by block length, in reflowing text:
+  - Up to three lines (leads, section descriptions, card text): `text-wrap: balance`, which evens out all the lines.
+  - Longer paragraphs: `text-wrap: pretty`. Browsers implementing it guard against a one-word last line only, so keep the NBSP between the last two words as well.
+  - Measuring needs the rendered line boxes: check in a browser (a script that reads per-character `Range` rects) or a screenshot, and say which.
 
 ### Rule 3 — Ragged edges
 
@@ -198,6 +202,7 @@ When running with Figma access, work on the selected text nodes instead of askin
 - [ ] Target font and renderer support checked before special spaces are inserted; compatibility fallback reported when used.
 - [ ] Dashes and quotes converted per detected language, and only in prose — not inside code, URLs, or attribute values.
 - [ ] No paragraph ends in a single stranded word (orphan) — last two words of every paragraph joined with NBSP.
+- [ ] No last line shorter than a third of the longest line; blocks of up to three lines use `balance`, longer ones `pretty` plus the NBSP guard.
 - [ ] NBSP not inserted inside code, URLs, or markup attributes.
 - [ ] Output format matches input format (or the explicitly requested one).
 - [ ] Change log lists every rule applied, not just a diff.

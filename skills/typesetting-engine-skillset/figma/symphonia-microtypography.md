@@ -50,7 +50,8 @@ Never replace `characters` wholesale on mixed-style text. Load every font used b
 ## 5. Wrapping and hanging punctuation
 
 - Body paragraphs: offer `textWrapStyle = "PRETTY"`.
-- Headings and short display text: offer `textWrapStyle = "BALANCE"`.
+- Headings, short display text and any block of up to three lines (leads, card text): offer `textWrapStyle = "BALANCE"`.
+- A last line shorter than a third of the longest line is an orphan even with two or three words (working threshold, no published source): `BALANCE` for up to three lines; `PRETTY` plus the last-two-words NBSP for longer text.
 - Display headings beginning with `"`, `“`, `„`, `«`, or `(`: offer `hangingPunctuation = true`. A live Inter probe confirmed those marks; it did not move `—`.
 - The Plugin API does not expose line boxes. Label rag and orphan judgments from screenshots as visual checks.
 

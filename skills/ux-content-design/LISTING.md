@@ -29,10 +29,11 @@ and explainers. Writes every state, not just the one in the mockup.
 **Short description** (card body)
 
 ```
-UX writing that doesn't read like it came from an AI. Marketing register is out of scope: the
-skill carries a named list of the habits that make machine-written copy recognizable, and a
-read-aloud gate that runs before any other check. Fixed 4-phase procedure ending in a string spec
-an engineer can paste. Bilingual PL/EN. Claude only.
+UX writing that doesn't read like it came from an AI — and doesn't skip its own procedure to get
+there. The skill carries a named list of the habits that make machine-written copy recognizable, a
+read-aloud gate that runs before any other check, and an output-shape rule: no string ships without
+its brief attached, so the four phases can't be quietly dropped. Ends in a string spec an engineer
+can paste. Bilingual PL/EN. Claude only.
 ```
 
 **Full description** (listing page)
@@ -78,6 +79,14 @@ lists.
    with localization headroom, glossary consistency, accessibility, truthfulness. Failures get
    fixed, not footnoted.
 4. **Ship** — a UI string spec, a design system content section, an explainer, or an audit report.
+
+### Why the procedure holds
+
+Found in live use: the skill loaded, then the model drafted from its default register anyway —
+no brief, no variants, no stress-test — and one section was written to imagined content that
+passed every style check. v1.2 turned the four phases from instructions into an output-shape
+rule: a response with copy and no visible Phase 1 brief is invalid, not incomplete. See
+`CHANGELOG.md`.
 
 ### Bilingual
 

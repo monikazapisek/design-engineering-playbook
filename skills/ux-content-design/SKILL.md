@@ -37,7 +37,7 @@ compatibility: |
 metadata:
   author: Monika Zapisek
   project: Design Engineering Playbook
-  version: 1.0
+  version: 1.2
   created: 2026-08-04
   updated: 2026-08-04
   status: accepted
@@ -55,6 +55,14 @@ paste, with its state, length budget, and rationale attached.
 **Load `references/golden-standards.md` before drafting anything.** Not after, not on request.
 It carries the examples, and examples fix tone in a way that no description of tone does. Every
 other reference assumes you have read it.
+
+**No string leaves this skill without its brief attached.** If the response contains copy but no
+Phase 1 brief above it, the output is invalid — regenerate, don't patch. This is an output-shape
+rule, not a reminder: the brief must be visible in the response, which makes skipping it
+impossible to do silently. The procedure below is a contract, not context. Reading it and then
+drafting from habit is the single most common way this skill fails in practice — the model
+treats the phases as optional, generates from its default register, and runs the checks only on
+strings that already look suspicious. The phases are the method, not the cleanup.
 
 Authoritative references (load `golden-standards.md` always, plus the one the task needs):
 
@@ -111,6 +119,11 @@ Before writing a single word, get (or explicitly assume, in writing):
 
 1. **Surface & component** — which screen, which component, which state. "Empty state of the
    invoices table, first-run, no data ever created" ≠ "empty state after a filter returns nothing."
+   If you cannot state in one sentence what the surface actually contains — not what it *probably*
+   contains — stop and ask. Copy for imagined content is the most expensive failure in this
+   skill: it passes every style check and is still wrong, because it describes a thing that
+   doesn't exist. A section named "Theming" might cover switching the product's built-in modes,
+   or adapting tokens to the customer's own brand — same word, opposite copy.
 2. **User & expertise level** — first-timer vs. returning vs. domain expert. Domain experts want
    the precise term; novices want the consequence. Guessing wrong is the most common failure.
 3. **Emotional state at that moment** — neutral, rushed, blocked, anxious, celebratory. This sets
@@ -298,6 +311,7 @@ This skill writes in either language, and refuses to translate literally.
 | Asked to write confirmshaming or a dark pattern | Decline that specific framing in one sentence, deliver the honest alternative, and note the conversion trade-off factually. |
 | Copy must fit an existing inconsistent system | Follow the dominant existing term, flag the inconsistency as a separate backlog item, and propose the migration term. |
 | Multiple valid terms, no glossary exists | Pick one, state the rule, and produce a 5-line glossary stub as a by-product. |
+| Model offers a "quick version" or asks whether to skip phases | The procedure is not optional and not negotiable. Skipping is silent scope-cutting. Run all four phases; if the task is genuinely trivial (one label), the phases are short — they are never absent. |
 
 ---
 
@@ -326,6 +340,11 @@ This skill writes in either language, and refuses to translate literally.
 - **Intensity substituted for specificity.** *Powerful*, *seamless*, *comprehensive*,
   *dramatically improves*. Reaching for a stronger adjective is the tell that the concrete noun
   is missing.
+- **Filter, not method.** Drafting from default habits, then running `golden-standards.md` as a
+  cleanup sieve. The tells regenerate faster than you can filter them — catching two pastiches
+  does not mean the rest are clean, it means your default register produces them continuously.
+  Write inside the procedure from the first word — verb first, concrete noun, no payoff clause —
+  instead of generating in the old register and patching.
 
 ---
 
